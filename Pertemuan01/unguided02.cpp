@@ -30,7 +30,7 @@ struct Creator_2123 { // Struct Creator_2123 yang berisi tipe data string nama, 
     int Umur_2123;
 };
 
-class Karya_2123 { // Class Karya_2123 yang berisi tipe data string nama karya, genre, dan int tahun terbit.
+class Karya_2123 { // Class Karya_2123 yang berisi tipe data string nama karya, genre, dan int tahun terbit yang akses private kemudian dibuat menjadi public.
 private:
     string NamaKarya_2123;
     string Genre_2123;

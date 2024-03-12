@@ -1,3 +1,7 @@
+/*
+Dadya Vio Hendraksa - 2311102123
+*/
+
 #include <iostream>
 #include <cmath> // Library untuk fungsi dalam operasi matematika
 
@@ -63,4 +67,3 @@ int main() {
 
     return 0;
 }
-

@@ -41,7 +41,7 @@ int main() {
 
     cout << "\n-----||||Nilai Mutu dan Nilai Bobot ITTP by Dadya Vio H.||||-----" << endl;
     for (int i = 1; i <= Nilai_2123.size(); ++i) { // Melakukan pengulangan untuk untuk mengoutputkan elemen yang telah di masukkan pada map
-        cout << "No Urut Nilai Mutu." << i << "     " << Nilai_2123[i] << endl; // Menampilkan elemen map yang sudah di ulang
+        cout << "No." << i << "     " << Nilai_2123[i] << endl; // Menampilkan elemen map yang sudah di ulang
     }
 
     return 0;
