@@ -9,16 +9,15 @@ Tipe data mengacu pada jenis nilai yang dapat disimpan dan digunakan dalam varia
 Tipe data yang didefinisikan oleh sistem disebut tipe data primitif. Tipe data primitif yang disediakan oleh banyak bahasa pemrograman adalah: int, float, char, double, bool, dll. Jumlah bit yang dialokasikan untuk setiap tipe data primitif tergantung pada bahasa pemrograman, kompiler, dan sistem operasi. Untuk tipe data primitif yang sama, bahasa yang berbeda dapat menggunakan ukuran yang berbeda. Tergantung pada ukuran tipe data, nilai total yang tersedia (domain) juga akan berubah.
 
 2. Tipe Data Abstrak<br/>
-Struktur data dengan operasinya dan Kita menyebutnya Tipe Data Abstrak (ADT). Sebuah ADT terdiri dari dua bagian:
+Struktur data dengan operasinya dan Kita menyebutnya Tipe Data Abstrak (ADT). ADT yang umum digunakan meliputi: Linked Lists, Stacks, Queues, Priority Queues, Binary Trees, Dictionaries, Disjoint Sets (Union and Find), Hash Tables, Graphs, dan banyak lainnya. Misalnya, stack menggunakan mekanisme LIFO (Last-In-First-Out) saat menyimpan data dalam struktur data. Elemen terakhir yang dimasukkan ke dalam tumpukan adalah elemen pertama yang dihapus. Operasi umum itu adalah: membuat tumpukan, mendorong elemen ke tumpukan, mengeluarkan elemen dari tumpukan, menemukan bagian atas tumpukan saat ini, menemukan jumlah elemen dalam tumpukan, dll. Maka dari itu, sebuah ADT memiliki dua bagian:
    - Deklarasi data
    - Deklarasi operasi<br/>
-ADT yang umum digunakan meliputi: Linked Lists, Stacks, Queues, Priority Queues, Binary Trees, Dictionaries, Disjoint Sets (Union and Find), Hash Tables, Graphs, dan banyak lainnya. Misalnya, stack menggunakan mekanisme LIFO (Last-In-First-Out) saat menyimpan data dalam struktur data. Elemen terakhir yang dimasukkan ke dalam tumpukan adalah elemen pertama yang dihapus. Operasi umum itu adalah: membuat tumpukan, mendorong elemen ke tumpukan, mengeluarkan elemen dari tumpukan, menemukan bagian atas tumpukan saat ini, menemukan jumlah elemen dalam tumpukan, dll.
 
 3. Tipe Data Koleksi<br/>
 Tipe data koleksi (Collection Data Type) merujuk pada jenis data yang dirancang untuk menampung sejumlah elemen atau nilai dalam satu kesatuan. Fungsi utama tipe data ini adalah untuk menggabungkan dan mengorganisir beberapa nilai ke dalam satu struktur atau variabel.
-    - Array yaitu strucktur data statis yang menyimpan elemen yang tipe datanya sama dan dimulai dari indeks 0.
-    - Vector merupakan struktur data dinamis yang menyimpan elemen dengant tipe data yang sama. Akan tetapi, keunggulannya yaitu dapat mengubah ukuran sesuai dengan elemen yang disimpannya sehingga dapat fleksibel.
-    - Map merupakan fungsi yang seperti array akan tetapi dapat memiliki elemen yang berbeda tipe data yang dapat diakses menggunakan tipe data kunci. Sehingga memiliki efisiensi dan kecepatan dalam aksesnya.
+   - Array yaitu strucktur data statis yang menyimpan elemen yang tipe datanya sama dan dimulai dari indeks 0.
+   - Vector merupakan struktur data dinamis yang menyimpan elemen dengant tipe data yang sama. Akan tetapi, keunggulannya yaitu dapat mengubah ukuran sesuai dengan elemen yang disimpannya sehingga dapat fleksibel.
+   - Map merupakan fungsi yang seperti array akan tetapi dapat memiliki elemen yang berbeda tipe data yang dapat diakses menggunakan tipe data kunci. Sehingga memiliki efisiensi dan kecepatan dalam aksesnya.
 
 ## Guided 
 
