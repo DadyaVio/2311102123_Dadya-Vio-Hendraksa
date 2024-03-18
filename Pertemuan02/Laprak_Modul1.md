@@ -3,21 +3,26 @@
 
 ## Dasar Teori
 
-Tipe data mengacu pada jenis nilai yang dapat disimpan dan digunakan dalam variabel atau ekspresi pada program komputer. Setiap tipe data memiliki karakteristik unik, termasuk rentang nilai yang dapat diwakili, besarnya ruang memori yang dibutuhkan, serta operasi yang dapat diterapkan pada nilai tersebut. Berikut ini adalah tpe data yang umum digunakan dalam C++:
+Array merupakan struktur data yang paling dasar. Satu blok memori dialokasikan untuk seluruh array untuk menampung elemen-elemen array.  Elemen  array  dapat  diakses  dalam  waktu  yang  konstan  dengan  menggunakan  indeks elemen tertentu sebagai subskrip. Untuk  mengakses  elemen  array,  alamat  elemen  dihitung  sebagai  offset  dari  alamat dasar   array   dan   satu   perkalian   diperlukan   untuk   menghitung   apa   yang   seharusnya ditambahkan  ke  alamat  dasar  untuk  mendapatkan  alamat  memori  elemen. 
 
-1. Tipe Data Primitif<br/>
-Tipe data yang didefinisikan oleh sistem disebut tipe data primitif. Tipe data primitif yang disediakan oleh banyak bahasa pemrograman adalah: int, float, char, double, bool, dll. Jumlah bit yang dialokasikan untuk setiap tipe data primitif tergantung pada bahasa pemrograman, kompiler, dan sistem operasi. Untuk tipe data primitif yang sama, bahasa yang berbeda dapat menggunakan ukuran yang berbeda. Tergantung pada ukuran tipe data, nilai total yang tersedia (domain) juga akan berubah.
+Keuntungan dari Array<br/>
+   - Sederhana dan mudah digunakan
+   - Akses lebih cepat ke elemen (akses konstan)
+Kekurangan Array<br/>
+   - Mengalokasikan  semua  memori  yang  dibutuhkan  di  depan  dan  membuang-buang ruang memori untuk indeks dalam array yang kosong.
+   - Ukuran    tetap:    Ukuran    larik    bersifat    statis    (tentukan    ukuran    larik    sebelum menggunakannya).
+   - Alokasi  satu  blok:  Untuk  mengalokasikan  array  itu  sendiri  di  awal,  terkadang  tidak mungkin  untuk  mendapatkan  memori  untuk  array  yang  lengkap(jika  ukuran  array besar).
+   - Penyisipan berbasis posisi kompleks: Untuk menyisipkan elemen pada posisi tertentu, kita  mungkin  perlu  menggeser  elemen  yang  ada.  Ini  akan  membuat  posisi  bagi  kita untuk memasukkan elemen baru pada posisi yang diinginkan. Jika posisi di mana kita ingin menambahkan elemen di awal, maka operasi pemindahan lebih mahal.
 
-2. Tipe Data Abstrak<br/>
-Struktur data dengan operasinya dan Kita menyebutnya Tipe Data Abstrak (ADT). ADT yang umum digunakan meliputi: Linked Lists, Stacks, Queues, Priority Queues, Binary Trees, Dictionaries, Disjoint Sets (Union and Find), Hash Tables, Graphs, dan banyak lainnya. Misalnya, stack menggunakan mekanisme LIFO (Last-In-First-Out) saat menyimpan data dalam struktur data. Elemen terakhir yang dimasukkan ke dalam tumpukan adalah elemen pertama yang dihapus. Operasi umum itu adalah: membuat tumpukan, mendorong elemen ke tumpukan, mengeluarkan elemen dari tumpukan, menemukan bagian atas tumpukan saat ini, menemukan jumlah elemen dalam tumpukan, dll. Maka dari itu, sebuah ADT memiliki dua bagian:
-   - Deklarasi data
-   - Deklarasi operasi<br/>
+1. Array 1 Dimensi<br/>
+Array satu dimensi adalah tipe variabel yang terdiri dari kumpulan data dengan tipe yang sama yang disusun dalam satu baris atau satu dimensi. Setiap elemen di dalam array memiliki sebuah indeks atau nomor yang digunakan untuk mengakses elemen tersebut. Indeks dimulai dari 0 dan berakhir pada jumlah elemen dikurangi satu. Array satu dimensi merupakan kumpulan data yang disusun dalam satu baris atau kolom, terdiri dari elemen-elemen dengan tipe yang sama. Setiap elemen dalam array satu dimensi dapat diakses menggunakan indeksnya. Array satu dimensi sering digunakan untuk menampung sejumlah elemen dengan tipe data yang sama, seperti angka, nilai, atau teks. Penggunaan array memungkinkan penyimpanan dan akses data secara terstruktur dalam satu variabel, yang lebih efisien daripada menggunakan sejumlah variabel terpisah.
 
-3. Tipe Data Koleksi<br/>
-Tipe data koleksi (Collection Data Type) merujuk pada jenis data yang dirancang untuk menampung sejumlah elemen atau nilai dalam satu kesatuan. Fungsi utama tipe data ini adalah untuk menggabungkan dan mengorganisir beberapa nilai ke dalam satu struktur atau variabel.
-   - Array yaitu strucktur data statis yang menyimpan elemen yang tipe datanya sama dan dimulai dari indeks 0.
-   - Vector merupakan struktur data dinamis yang menyimpan elemen dengant tipe data yang sama. Akan tetapi, keunggulannya yaitu dapat mengubah ukuran sesuai dengan elemen yang disimpannya sehingga dapat fleksibel.
-   - Map merupakan fungsi yang seperti array akan tetapi dapat memiliki elemen yang berbeda tipe data yang dapat diakses menggunakan tipe data kunci. Sehingga memiliki efisiensi dan kecepatan dalam aksesnya.
+2. Array 2 Dimensi<br/>
+Array dua dimensi adalah struktur data yang terdiri dari baris dan kolom, di mana setiap elemen dapat diakses menggunakan indeks yang terdapat di dalamnya. Dalam array dua dimensi, setiap elemen memiliki dua indeks, yaitu indeks baris dan indeks kolom. Indeks baris menunjukkan posisi elemen dalam baris, sementara indeks kolom menunjukkan posisi elemen dalam kolom. Jadi, array dua dimensi digunakan untuk menyimpan data yang terorganisir dalam bentuk tabel dengan baris dan kolom, atau untuk data yang memiliki struktur yang lebih kompleks, seperti matriks.
+
+3. Array 3 Dimensi<br/>
+
+Array tiga dimensi adalah tipe array yang terdiri dari satu baris, satu kolom, dan beberapa lapisan. Array tiga dimensi sering digunakan untuk menyimpan data dalam bentuk tabel yang meliputi baris, kolom, dan halaman, atau untuk menyimpan data yang memiliki struktur yang kompleks seperti matriks, sehingga memiliki ukuran memori yang lebih besar. Ini memungkinkan penyimpanan dan akses data yang terstruktur dalam satu variabel, meningkatkan efisiensi dalam pengelolaan data. Array tiga dimensi sering digunakan untuk menyimpan data dalam bentuk tabel yang meliputi baris, kolom, dan halaman, atau untuk menyimpan data yang memiliki struktur yang kompleks seperti matriks. Untuk mengakses elemen dalam array tiga dimensi, kita dapat menggunakan perulangan nested.
 
 ## Guided 
 
@@ -64,7 +69,7 @@ int main() {
   }
 }
 ```
-Program diatas ini merupakan 4 dari operasi aritmatika dasar yaitu penambahan (+), pengurangan (-), Perkalian (*), dan pembagian (/). Pertama user akan memilih operator yang akan digunakan pada cin dan berguna juga untuk memilih switch casenya. Setelahnya user diminta untuk memasukkan 2 angka sebagai imput untuk dapat melakukan operasi aritmatika yang dipilih. Maka, program diatas memiliki 2 tipe data primitif yang digunakan yaitu char untuk pemilihan operator dan float untuk input angka.
+Program diatas ini merupakan input array 3 dimensi. Dimana user akan  menginputkan nilai elemen setiap bari dan kolom yang ada. Dimana disini dideklarasikan array arr[2][3][3]; maka kita akan input sesuai kondisi yang ada pada program tersebut. Setelahnya input array ini akan ditampilkan menjadi data array untuk melihat apakah benar semua nilai inputnya. Terakhir yaitu menampilkan susunan array yang ada pada data arry yang tadi kita inputkan. Disini program menggunakan nested for 3 kali.
 
 ### 2. Program Mencari Nilai Maksimal pada Array
 
@@ -92,7 +97,7 @@ int main() {
   cout << "Nilai maksimum adalah " << maks << " berada di Array ke " << lokasi << endl;
 }
 ```
-Program diatas ini menggunakan tipe data struct yang bersifat abstrak, sehingga bisa berisi banyak tipe data dan memiliki nilai beragam tipe data. Karena struct bersifat public maka dapat diakses siapapun, diatas ini dapat dilihat struct nya memiliki 3 nilai yaitu char name [50], char address[100], dan int umur. Sehingga pada fungsi main kita akan mendeklarasikan atau mengisi nilai struct untuk 2 struct yaitu mhs1 dan mhs2.
+Program diatas ini berguna untuk mencari nilai maksimal dari elemen array yang telah diinputkan user. Jadi program ini hanya menggunakan array 1 dimensi maka tidak akan menggunakan nested for. Pertama user akan diminta untuk menentukan penjang untuk elemen array nya. Contoh kita input 3 maka selanjutnya kita akan mengisi nilai elemen array 1 dimensi tersebut dari indeks 0 sampai indeks 2 yang kemudian akan dicari nilai max dari elemen menggunakan percabangan if di dalam for. Terakhir tinggal memanggil nilai maks yang telah ditemukan.
 
 ## Unguided 
 
