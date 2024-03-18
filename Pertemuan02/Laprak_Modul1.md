@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 12 - ARRAY</h1>
+# <h1 align="center">Laporan Praktikum Modul 2 - ARRAY</h1>
 <p align="center">Dadya Vio Hendraksa - 2311102123</p>
 
 ## Dasar Teori
@@ -102,7 +102,7 @@ Program diatas ini berguna untuk mencari nilai maksimal dari elemen array yang t
 ## Unguided 
 
 ### 1. Buatlah program untuk menampilkan Output seperti berikut ini dengan data yang diinputkan oleh user!
-(Soal_Unguided-01_Dadya-Vio-H.png)
+![Screenshot Soal Unguided 1](Soal_Unguided-01_Dadya-Vio-H.png)
 
 ```C++
 /*
