@@ -320,7 +320,7 @@ int main() { // Fungsi utama
 }
 ```
 #### Output:
-![Screenshot Output Unguided 3](Output_Unguided-03_Part-1_Dadya-Vio-H.png)
+![Screenshot Output Unguided 3](Output_Unguided-03_Part-1_Dadya-Vio-H.png) <br/>
 ![Screenshot Output Unguided 3](Output_Unguided-03_Part-2_Dadya-Vio-H.png)
 Program di ditas ini menggunakan fungsi map yang dapat mengisi nilai dengan tipe data berbeda. Seperti program ini dengan key nya tipe data int dan isi nilai elemennya dengan tipe data string. Disis saya melakukan map untuk nilai mutu dan nilai bobot di ITTP  dengan adanya 7 elemen yang di dkelarasikan dari nilai 4 sampai 0 yang inisial A sampai E. Bagian akhir seperti biasa kita menggunakan for untuk melakukan perulangan semua elemen yang ada dengan kondisinya.  Sehingga akan beroutput semua elemen yang ada pada map.
 
@@ -345,3 +345,5 @@ Tipe data C++ seperti tipe data primitif, abstrak, dan koleksi merupakan sebuah 
 ## Referensi
 [1] Shofyann Hanief,et al., Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Yogyakarta: Andi Publisher, 2020. <br/>
 [2] Joseph Teguh Santoso., STRUKTUR DATA dan ALGORITMA (Bagian 1). Semarang: Yayasan Prima Agus Teknik, 2021.
+
+[def]: Output_Unguided-03_Part-2_Dadya-Vio-H.png
