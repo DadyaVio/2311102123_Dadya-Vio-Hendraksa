@@ -8,7 +8,8 @@ Array merupakan struktur data yang paling dasar. Satu blok memori dialokasikan u
 Keuntungan dari Array<br/>
    - Sederhana dan mudah digunakan
    - Akses lebih cepat ke elemen (akses konstan)<br/>
-Kekurangan Array
+
+Kekurangan Array<br/>
    - Mengalokasikan  semua  memori  yang  dibutuhkan  di  depan  dan  membuang-buang ruang memori untuk indeks dalam array yang kosong.
    - Ukuran    tetap:    Ukuran    larik    bersifat    statis    (tentukan    ukuran    larik    sebelum menggunakannya).
    - Alokasi  satu  blok:  Untuk  mengalokasikan  array  itu  sendiri  di  awal,  terkadang  tidak mungkin  untuk  mendapatkan  memori  untuk  array  yang  lengkap(jika  ukuran  array besar).
