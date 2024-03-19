@@ -159,10 +159,7 @@ int main() {
 ```
 #### Output:
 ![Screenshot Output Unguided 1](Output_Unguided-01_Dadya-Vio-H.png)
-Program diatas ini berguna untuk melakukan konversi bilangan. pertama disini saya menggunakan library cmath untuk memudahkan dalam operasi matematikanya. Saya menggunakan 2 data primitif yaitu tipe data int dan long. Karena harus menggunakan 2 fungsi, maka saya menggunakan 1 prosedur yang berisi menu pilihan dan input untuk menu yang terhubung dengan switch case yang ada, 1 fungsi untuk konversi desimal ke biner yang isinya yaitu operasi matematika untuk konversi, dan 1 fungsi untuk konversi biner ke desimal yang isinya yaitu operasi matematika untuk konversi juga. Selanjutnya di fungsi main kita gunakan do while menu yang ada jika tidak menginputkan 0, yang dimana didalamnya ada switch case dengan pemanggilan nilai yang ada pada 2 fungsi konversi.
-
-Kesimpulan Tipe Data Primitif:<br/>
-Kesimpulan yang dapat diambil tipe data primitif berguna untuk menyimpan nilai sederhana, akan tetapi tipe data primitif ini merupakan sebuah bagian yang sangat penting untuk membangun sebuah program awal yang baik. maka, disini pengguna dapat memiliki kemudahan untuk memahami program yang ada tipe data primitif ini.
+Program ini hanya menggunakan array 1 dimensi dengan batas max elemen 50, jadi pertama user akan langsung diminta untuk mengisi nilai elemenya, jika sudah dapat menginput tanda (.) untuk melanjutkan program. Di program terlihat bahwa batas max angka genap dan ganjil yaitu 50. Kemudian kita menggunakan looping for yang didalamnya ada percabangan if-else untuk memeriksa dan memilah elemen array yang kita masukkan menjadi angka genap dan angka ganjil. Maka selanjutnya kita buat looping for yang memperhatikan syaratnya juga untuk menampilkan data array yang telah kita masukkan semuanya. Selanjutnya yaitu menampilkan elemen array yang ber-angka genap dimana disini saya menggunakan looping for untuk menampilkan nilai dan percabangan if untuk memanggil nilai genapnya. Lanjut  untuk menampilkan elemen array yang angka ganjil juga sama menggunakan looping for untuk menampilkan nilai dan percabangan if untuk memanggil nilai ganjil dari if-else pemisahan diawal tadi.
 
 ### 2. Buatlah program Input array tiga dimensi (seperti pada guided) tetapi jumlah atau ukuran elemennya diinputkan oleh user!
 
@@ -187,7 +184,7 @@ int main() {
     cout << "Inputkan jumlah elemen array dimensi C: ";
     cin >> C_2123; // input ukuran elemen array nilai C
 
-    // Deklarasi dan inisialisasi 3 dimensi is array
+    // Deklarasi dan inisialisasi 3 dimensi isi array
     int arr[A_2123][B_2123][C_2123];
 
     // Input elemen array yang telah ditetapkan
@@ -216,13 +213,7 @@ int main() {
 ```
 #### Output:
 ![Screenshot Output Unguided 2](Output_Unguided-02_Dadya-Vio-H.png)
-Program diatas berunga untuk mengoutputkan tipe data abstrak yaitu class dan struct. Dimana, terdapat sebuah struct Creator_2123 yang memiliki nilai string nama, negara, pekerjaan, dan int umur. Lalu terdapat juga sebuah class yang terdapat nilai yaitu string nama karya, genre, dan int tahun terbit yang masih bersifat private. Kemudian nilai private pada class ini diatur untuk nilai awalnya dan mengambil nilai private yang ada, pada sebuah class publicnya. maka nilai yang ada distruct akan di isi dengan "Akira Toriyama", "Jepang", "Mangaka", 68. Nilai pada class akan di isi dengan "Dragon Ball", "Fantasi", 1984. Terakhir pada fungsi main akan di deklarasikan dan menjadikan output untuk nilai struct dan classnya.
-
-A. Class<br/>
-Class disini sudah diketahui bahwa memiliki sifat private yang tidak sembarang user dapat mengakses dari keluar class. Class juga memiliki sifat untuk penggabungan data dan operasinya menjadi satu kesatuan. Di class kita tidak dapat membuat inisial variabel saat deklarasi. Sehingga membutuhkan pada fungsi public untuk private data yang ada sehingga harus mengatur nilai awal dan mengambil nilai atribut private.
-
-B. Struct<br/>
-Struct merupakan sebuah jenis khusus dari class, Pada dasarnya anggota class memiliki sifat private. Akan tetapi struct berbeda, struct disini memili sifat sebaliknya yaitu public sehingga dapat diakses dengan bebas. Di dalam struct juga memiliki fungsi yang spesifik yaitu untuk pengelompokan data yang dibuat dengan tipe data yang berlainan pada program.
+Program ini menggunakan 3 dimensi yang dimana kita harus input untuk jumlah elemen yang akan kita isi nantinya. disini saya menggunakan A, B, C untuk inisial dimensinya. pertama user akan diminta untuk mengisi jumlah elemen dari A, B, C. yang kemudian kita sebagai user akan mengisi nilai elemen dengan menggunakan angka disinilah kita menggunakan nested for yang sebanyak 3x karena array nya 3 dimensi yaitu nested A, B, C untuk menginput elemen tiap dimensinya, baris dan kolommnya. Selanjutnya yaitu menampilkan array 3 dimensi yang telah kita buat tadi seperti sebelumnya kita menggunakan nested for yang sebanyak 3x karena array nya 3 dimensi yaitu nested A, B, C untuk menampilkannya elemen tiap baris dan kolomnya. Secara sekilas seperti guided 1 akan tetapi disini kita menentukan jumlah elemen array nya.
 
 ### 3. Buatlah program menu untuk mencari nilai Maksimum, Minimum dan Nilai rata – rata dari suatu array dengan input yang dimasukan oleh user!
 
@@ -326,28 +317,10 @@ int main() { // Fungsi utama
 ```
 #### Output:
 ![Screenshot Output Unguided 3](Output_Unguided-03_Dadya-Vio-H.png)
-Program di ditas ini menggunakan fungsi map yang dapat mengisi nilai dengan tipe data berbeda. Seperti program ini dengan key nya tipe data int dan isi nilai elemennya dengan tipe data string. Disis saya melakukan map untuk nilai mutu dan nilai bobot di ITTP  dengan adanya 7 elemen yang di dkelarasikan dari nilai 4 sampai 0 yang inisial A sampai E. Bagian akhir seperti biasa kita menggunakan for untuk melakukan perulangan semua elemen yang ada dengan kondisinya.  Sehingga akan beroutput semua elemen yang ada pada map.
-
-Perbedaan Map dan Array
-1. Pengubahan Elemen
-    - Array untuk perubahan elemn sangat tidak dinamis, karena tidak dapat mengubah salah satu elemen saja.
-    - Map lebih fleksibel dan dinamis karena dapat mengubah salah satu elemen saja.
-2. Ukuran
-    - Array ukurannya sudah ditentukan saat pembuatanya/deklarasinya dan tidak bisa diubah.
-    - Map ukurannya bisa diubah lebih kecil atau lebih besar tergantung dengan banyak elemen yang ada.
-3. Tipe Data
-    - Array hanya bisa memiliki elemen dengan tipe data yang sama.
-    - Map dapat memiliki elemen yang tipe datanya berbeda dalam satu kelompok data.
-4. Penggunaan
-    - Array menggunakan pengelompokkan data dengan indeks yang sudah tetap yaitu dari indeks 0.
-    - Map lebih fleksibel karena pengelompokkannya menggunakan nilai kunci yang telah kita buat, jadi tidak ada ketetapan.
-
-
+Program ini berguna untuk mencari min, max, dan median dari array yang diinput user. Saya disini menggunakan 3 fungsi yaitu Minimal_2123, Maksimal_2123, Rata_2123 untuk memudahkan dalam pemprosesan dan penghitungan mencari min, max, dan median dari array dengan menggunakan looping for dan pecabangan if-else. Selanjutnya pada Fungsi utama main pertama kita deklarasikan array, jumlah max elemen array dan variabel pilih_2123, size_2123. Kemudian disini saya menggunakan do while untuk melakukan perulangan menunya, didalam nya terdapat menu untuk memilih mencari nilai apa yang kita inginkan. Kemudian ada switch pertama dari case 1 samapai case 4. untuk case 1 sampai case 3 disini saya jadikan 1 karena ada beberapa kesamaan untuk input jumlah elemen array, cek ukuran jumlah elemen array dengan perulangan if, dan input nilai elemen array dengam menggunakan looping for. Selanjutnya terdapat switch kedua didalam case 1-3 switch pertama yang berguna untuk memanggil nilai dari 3 fungsi yang kita buat tadi diluat fungsi utama main yang harusnya teroutput sesuai dengan pilihan menu yang dipilih user. Unuk penjelasan case 4 dan default switch pertama yaitu case 4 untuk keluar dari program ini sedangkan default untuk looping jika user input jumlah elemen arraynya salah.
 ## Kesimpulan
-Tipe data C++ seperti tipe data primitif, abstrak, dan koleksi merupakan sebuah kesatuan yang sangat penting dalam program C++. Seperti semua variabel yang ada pasti memiliki tipe data untuk memberikan informasi kepada pengguna supaya dapat membuat program yang se efisien dan secepat mungkin dalam operasinya.
+Array sangat membantu dalam efisiensi program karena dapat mempermudah dalam menyimpan dan mengakses data yang terkumpul dalam satu variabel, dari pada menggunakan banyak variabel. Dengan adanya pengurutan data indeks yang tetap dari 0 ini memberikan kemudahan dalam membaca alamat elemen tersebut. Akan tetapi perlu diketahui bahwa menggunakan array yang lebih dari 2 dimensi tidaklah efisien. Semua tergantung program yang akan dibuat dan pembangunan sturuktur data dan algoritma yang digunakan sebelum melakukan pemprograman.
 
 ## Referensi
 [1] Shofyann Hanief,et al., Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Yogyakarta: Andi Publisher, 2020. <br/>
 [2] Joseph Teguh Santoso., STRUKTUR DATA dan ALGORITMA (Bagian 1). Semarang: Yayasan Prima Agus Teknik, 2021.
-
-[def]: Output_Unguided-03_Part-2_Dadya-Vio-H.png
