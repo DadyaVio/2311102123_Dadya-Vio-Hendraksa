@@ -946,6 +946,7 @@ int main() {
 Program ini 
 
 ## Kesimpulan
+Kesimpulannya
 
 ## Referensi
 [1] Shofyann Hanief,et al., Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Yogyakarta: Andi Publisher, 2020. <br/>
