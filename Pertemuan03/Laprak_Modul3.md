@@ -699,7 +699,7 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
         tail = nullptr;
     }
  
-    void tambah_produk(string Nama_Produk, int harga) { // Menambahkan produk ke dalam linked list di bagian atas
+    void tambah_produk_2123(string Nama_Produk, int harga) { // Menambahkan produk ke dalam linked list di bagian atas
         Node* newNode = new Node;
         newNode->Nama_Produk = Nama_Produk; // Menambahkan nama produk ke dalam linked list
         newNode->harga = harga; // Menambahkan harga produk ke dalam linked list
@@ -714,7 +714,7 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
         head = newNode; // Head menunjuk ke newNode setelah newNode di tambahkan ke linked list
     }
 
-    void hapus_produk() { // Menghapus produk teratas dari linked list
+    void hapus_produk_2123() { // Menghapus produk teratas dari linked list
         if (head == nullptr) {
             return;
         }
@@ -729,7 +729,7 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
         delete temp;
     }
 
-    bool ubah_produk(string Nama_Produk_Lama, string Nama_Produk_Baru, int Harga_Baru) { // Mengubah data produk berdasarkan nama produk
+    bool ubah_produk_2123(string Nama_Produk_Lama, string Nama_Produk_Baru, int Harga_Baru) { // Mengubah data produk berdasarkan nama produk
         Node* current = head;
         while (current != nullptr) { // Looping selama current tidak nullptr
             if (current->Nama_Produk == Nama_Produk_Lama) { // Jika nama produk lama ditemukan di linked list maka lakukan perubahan data produk
@@ -742,7 +742,7 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
         return false; // Mengembalikan false jika data produk tidak ditemukan
     }
 
-    void sisipkan_posisi_tertentu(string Nama_Produk, int harga, int posisi) { // Menambahkan data produk pada posisi tertentu
+    void sisipkan_posisi_tertentu_2123(string Nama_Produk, int harga, int posisi) { // Menambahkan data produk pada posisi tertentu
         if (posisi < 1) {
             cout << "Posisi tidak ada" << endl;
             return;
@@ -781,7 +781,7 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
         current->next = newNode;
     }
 
-    void hapus_posisi_tertentu(int posisi) { // Menghapus data produk pada posisi tertentu
+    void hapus_posisi_tertentu_2123(int posisi) { // Menghapus data produk pada posisi tertentu
         if (posisi < 1 || head == nullptr) { // Jika posisi kurang dari 1 atau head nullptr maka tampilkan pesan
             cout << "Posisi tidak ada atau list kosong" << endl;
             return;
@@ -815,7 +815,7 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
         delete current;
     }
 
-    void hapus_semua() { // Menghapus semua data produk
+    void hapus_semua_2123() { // Menghapus semua data produk
         Node* current = head; // Pointer current menunjuk ke head
         while (current != nullptr) {
             Node* temp = current; // Pointer temp menunjuk ke current
@@ -826,7 +826,7 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
         tail = nullptr;
     }
 
-    void display() { // Menampilkan data produk
+    void display_2123() { // Menampilkan data produk
         Node* current = head;
         cout << "\nBerikut daftar Produk dan harga yang tersedia saat ini:" << endl;
         cout << left << setw(20) << "Nama Produk" << "Harga" << endl; // Menampilkan header tabel nama produk dan harga
@@ -841,14 +841,14 @@ public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di lu
 int main() {
     DoublyLinkedList list; // Deklarasi objek list dari class DoublyLinkedList
     
-    list.tambah_produk("Hanasui", 30000);
-    list.tambah_produk("Wardah", 50000);
-    list.tambah_produk("Skintific", 100000);
-    list.tambah_produk("Somethinc", 150000);
-    list.tambah_produk("Originote", 60000);
+    list.tambah_produk_2123("Hanasui", 30000);
+    list.tambah_produk_2123("Wardah", 50000);
+    list.tambah_produk_2123("Skintific", 100000);
+    list.tambah_produk_2123("Somethinc", 150000);
+    list.tambah_produk_2123("Originote", 60000);
 
     cout << "\n||||||-------Selamat datang di Toko Skincare Purwokerto by Dadya Vio Hendraksa_2123-------||||||" << endl;
-    list.display();
+    list.display_2123();
 
     while (true) { // Looping menu utama
         cout << "\nMenu Toko Skincare Purwokerto" << endl;
@@ -871,12 +871,12 @@ int main() {
             cin >> Nama_Produk;
             cout << "Masukkan harga: ";
             cin >> harga;
-            list.tambah_produk(Nama_Produk, harga); // Memanggil fungsi tambah_produk
+            list.tambah_produk_2123(Nama_Produk, harga); // Memanggil fungsi tambah_produk
             cout << "Produk berhasil ditambahkan teratas" << endl;
             break;
         }
         case 2: {
-            list.hapus_produk(); // Memanggil fungsi hapus_produk
+            list.hapus_produk_2123(); // Memanggil fungsi hapus_produk
             cout << "Produk teratas berhasil dihapus" << endl;
             break;
         }
@@ -889,7 +889,7 @@ int main() {
             cin >> Nama_Produk_Baru;
             cout << "Input harga baru: ";
             cin >> Harga_Baru;
-            bool updated = list.ubah_produk(Nama_Produk_Lama, Nama_Produk_Baru, Harga_Baru); // Memanggil fungsi ubah_produk
+            bool updated = list.ubah_produk_2123(Nama_Produk_Lama, Nama_Produk_Baru, Harga_Baru); // Memanggil fungsi ubah_produk
             if (!updated) {
                 cout << "Data produk tidak ditemukan" << endl;
             }
@@ -907,7 +907,7 @@ int main() {
             cin >> harga;
             cout << "Input posisi: ";
             cin >> position;
-            list.sisipkan_posisi_tertentu(Nama_Produk, harga, position); // Memanggil fungsi sisipkan_posisi_tertentu
+            list.sisipkan_posisi_tertentu_2123(Nama_Produk, harga, position); // Memanggil fungsi sisipkan_posisi_tertentu
             cout << "Produk berhasil ditambahkan pada posisi " << position << endl;
             break;
         }
@@ -915,16 +915,16 @@ int main() {
             int position;
             cout << "Input posisi yang ingin dihapus: ";
             cin >> position;
-            list.hapus_posisi_tertentu(position); // Memanggil fungsi hapus_posisi_tertentu
+            list.hapus_posisi_tertentu_2123(position); // Memanggil fungsi hapus_posisi_tertentu
 
             break;
         }
         case 6: {
-            list.hapus_semua(); // Memanggil fungsi hapus_semua
+            list.hapus_semua_2123(); // Memanggil fungsi hapus_semua
             break;
         }
         case 7: {
-            list.display(); // Memanggil fungsi display
+            list.display_2123(); // Memanggil fungsi display
             break;
         }
         case 8: {
