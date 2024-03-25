@@ -402,7 +402,7 @@ Program diatas ini berguna untuk mencari nilai maksimal dari elemen array yang t
 
 ## Unguided 
 
-### 1. Buatlah program menu Single Linked List Non-Circular untuk menyimpan Nama dan usia mahasiswa, dengan menggunakan inputan dari user. Lakukan operasi berikut: </br> a. Masukkan data sesuai urutan berikut. (Gunakan insert depan, belakang atau tengah). Data pertama yang dimasukkan adalah nama dan usia anda.</br> ![Screenshot Soal Unguided 1](Soal_Unguided-01_Dadya-Vio-H.png) b. Hapus data Akechi c. Tambahkan data berikut diantara John dan Jane : Futaba, 18 d. Tambahkan data berikut diawal : Igor, 20 e. Ubah data Michael menjadi : Reyn, 18 f. Tampilkan seluruh data
+### 1. Buatlah program menu Single Linked List Non-Circular untuk menyimpan Nama dan usia mahasiswa, dengan menggunakan inputan dari user. Lakukan operasi berikut: </br> a. Masukkan data sesuai urutan berikut. (Gunakan insert depan, belakang atau tengah). Data pertama yang dimasukkan adalah nama dan usia anda.</br> ![Screenshot Soal Unguided 1](Soal_Unguided-01_Dadya-Vio-H.png)</br> b. Hapus data Akechi c. Tambahkan data berikut diantara John dan Jane : Futaba, 18 d. Tambahkan data berikut diawal : Igor, 20 e. Ubah data Michael menjadi : Reyn, 18 f. Tampilkan seluruh data
 
 ```C++
 /*
