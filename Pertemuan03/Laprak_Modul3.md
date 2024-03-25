@@ -666,7 +666,7 @@ int main() {
 ![Screenshot Output Unguided 1](Output_Unguided-01_Dadya-Vio-H.png)
 Program ini hanya menggunakan array 1 dimensi dengan batas max elemen 50, jadi pertama user akan langsung diminta untuk mengisi nilai elemenya, jika sudah dapat menginput tanda (.) untuk melanjutkan program. Di program terlihat bahwa batas max angka genap dan ganjil yaitu 50. Kemudian kita menggunakan looping for yang didalamnya ada percabangan if-else untuk memeriksa dan memilah elemen array yang kita masukkan menjadi angka genap dan angka ganjil. Maka selanjutnya kita buat looping for yang memperhatikan syaratnya juga untuk menampilkan data array yang telah kita masukkan semuanya. Selanjutnya yaitu menampilkan elemen array yang ber-angka genap dimana disini saya menggunakan looping for untuk menampilkan nilai dan percabangan if untuk memanggil nilai genapnya. Lanjut  untuk menampilkan elemen array yang angka ganjil juga sama menggunakan looping for untuk menampilkan nilai dan percabangan if untuk memanggil nilai ganjil dari if-else pemisahan diawal tadi.
 
-### 2. Modifikasi Guided Double Linked List dilakukan dengan penambahan operasi untuk menambah data, menghapus, dan update di tengah / di urutan tertentu yang diminta. Selain itu, buatlah agar tampilannya menampilkan Nama produk dan harga.</br> ![Screenshot Soal Unguided 2 Part 1](Soal_Unguided-02_Part-1_Dadya-Vio-H.png)<br/> ![Screenshot Soal Unguided 2 Part 2](Soal_Unguided-02_Part-2_Dadya-Vio-H.png)<br/> Case:</br> 1. Tambahkan produk Azarine dengan harga 65000 diantara Somethinc dan Skintific</br> 2. Hapus produk wardah</br> 3. Update produk Hanasui menjadi Cleora dengan harga 55.000</br> 4. Tampilkan menu seperti dibawah ini</br> 
+### 2. Modifikasi Guided Double Linked List dilakukan dengan penambahan operasi untuk menambah data, menghapus, dan update di tengah / di urutan tertentu yang diminta. Selain itu, buatlah agar tampilannya menampilkan Nama produk dan harga.</br> ![Screenshot Soal Unguided 2 Part 1](Soal_Unguided-02_Part-1_Dadya-Vio-H.png)<br/> ![Screenshot Soal Unguided 2 Part 2](Soal_Unguided-02_Part-2_Dadya-Vio-H.png)<br/> Case:</br> 1. Tambahkan produk Azarine dengan harga 65000 diantara Somethinc dan Skintific</br> 2. Hapus produk wardah</br> 3. Update produk Hanasui menjadi Cleora dengan harga 55.000</br> 4. Tampilkan menu seperti dibawah ini:</br> 
 
 ### Toko Skincare Purwokerto</br> 1. Tambah Data</br> 2. Hapus Data 3 Update Data</br> 4. Tambah Data Urutan Tertentu</br> 5. Hapus Data Urutan Tertentu</br> 6. Hapus Seluruh Data</br> 7. Tampilkan Data</br> 8. Exit</br> Pada menu 7, tampilan akhirnya akan menjadi seperti dibawah ini :</br> ![Screenshot Soal Unguided 2 Part 2](Soal_Unguided-02_Part-2_Dadya-Vio-H.png)
 
@@ -675,158 +675,276 @@ Program ini hanya menggunakan array 1 dimensi dengan batas max elemen 50, jadi p
 Dadya Vio Hendraksa - 2311102123
 */
 
-#include <iostream>
+#include <iostream> // mengatur input output
+#include <iomanip> // mengatur layout output
+#include <string> // mengatur string
 
-using namespace std;
+using namespace std; // menggunakan standar library
+
+class Node { // Deklarasi Class Node untuk Double Linked List
+public: // Deklarasi Public untuk Class Node agar bisa diakses di luar class Node
+    string Nama_Produk; 
+    int harga;
+    Node* prev;
+    Node* next;
+};
+
+class DoublyLinkedList { // Deklarasi Class DoublyLinkedList untuk Double Linked List
+public: // Deklarasi Public untuk Class DoublyLinkedList agar bisa diakses di luar class DoublyLinkedList
+    Node* head;
+    Node* tail;
+    DoublyLinkedList() {
+        head = nullptr;
+        tail = nullptr;
+    }
+ 
+    void tambah_produk(string Nama_Produk, int harga) { // Menambahkan produk ke dalam linked list di bagian atas
+        Node* newNode = new Node;
+        newNode->Nama_Produk = Nama_Produk; // Menambahkan nama produk ke dalam linked list
+        newNode->harga = harga; // Menambahkan harga produk ke dalam linked list
+        newNode->prev = nullptr; // Pointer prev menunjuk ke nullptr
+        newNode->next = head; // Pointer next menunjuk ke head
+        if (head != nullptr) {
+            head->prev = newNode; // Pointer prev head menunjuk ke newNode jika head tidak nullptr
+        }
+        else {
+            tail = newNode; // Tail menunjuk ke newNode jika head nullptr
+        }
+        head = newNode; // Head menunjuk ke newNode setelah newNode di tambahkan ke linked list
+    }
+
+    void hapus_produk() { // Menghapus produk teratas dari linked list
+        if (head == nullptr) {
+            return;
+        }
+        Node* temp = head;
+        head = head->next;
+        if (head != nullptr) {
+            head->prev = nullptr;
+        }
+        else {
+            tail = nullptr;
+        }
+        delete temp;
+    }
+
+    bool ubah_produk(string Nama_Produk_Lama, string Nama_Produk_Baru, int Harga_Baru) { // Mengubah data produk berdasarkan nama produk
+        Node* current = head;
+        while (current != nullptr) { // Looping selama current tidak nullptr
+            if (current->Nama_Produk == Nama_Produk_Lama) { // Jika nama produk lama ditemukan di linked list maka lakukan perubahan data produk
+                current->Nama_Produk = Nama_Produk_Baru; // Mengubah nama produk lama menjadi nama produk baru
+                current->harga = Harga_Baru; // Mengubah harga produk lama menjadi harga produk baru
+                return true;
+            }
+            current = current->next;
+        }
+        return false; // Mengembalikan false jika data produk tidak ditemukan
+    }
+
+    void sisipkan_posisi_tertentu(string Nama_Produk, int harga, int posisi) { // Menambahkan data produk pada posisi tertentu
+        if (posisi < 1) {
+            cout << "Posisi tidak ada" << endl;
+            return;
+        }
+        Node* newNode = new Node;
+        newNode->Nama_Produk = Nama_Produk;
+        newNode->harga = harga;
+        if (posisi == 1) { // Jika posisi adalah 1 maka tambahkan data produk di depan linked list
+            newNode->next = head;
+            newNode->prev = nullptr;
+            if (head != nullptr) {
+                head->prev = newNode;
+            }
+            else {
+                tail = newNode;
+            }
+            head = newNode;
+            return;
+        }
+        Node* current = head;
+        for (int i = 1; i < posisi - 1 && current != nullptr; ++i) { // Looping sampai posisi sebelum posisi yang diinginkan (Posisi - 1)
+            current = current->next;
+        }
+        if (current == nullptr) {
+            cout << "Posisi tidak ada" << endl;
+            return;
+        }
+        newNode->next = current->next;
+        newNode->prev = current;
+        if (current->next != nullptr) {
+            current->next->prev = newNode; // Pointer prev node setelah current menunjuk ke newNode jika node setelah current tidak nullptr
+        }
+        else {
+            tail = newNode;
+        }
+        current->next = newNode;
+    }
+
+    void hapus_posisi_tertentu(int posisi) { // Menghapus data produk pada posisi tertentu
+        if (posisi < 1 || head == nullptr) { // Jika posisi kurang dari 1 atau head nullptr maka tampilkan pesan
+            cout << "Posisi tidak ada atau list kosong" << endl;
+            return;
+        }
+        Node* current = head;
+        if (posisi == 1) {
+            head = head->next;
+            if (head != nullptr) {
+                head->prev = nullptr;
+            }
+            else {
+                tail = nullptr;
+            }
+            delete current;
+            return;
+        }
+        for (int i = 1; current != nullptr && i < posisi; ++i) { // Looping sampai posisi yang diinginkan
+            current = current->next;
+        }
+        if (current == nullptr) {
+            cout << "Posisi tidak ada" << endl;
+            return;
+        }
+        if (current->next != nullptr) {
+            current->next->prev = current->prev;
+        }
+        else {
+            tail = current->prev;
+        }
+        current->prev->next = current->next;
+        delete current;
+    }
+
+    void hapus_semua() { // Menghapus semua data produk
+        Node* current = head; // Pointer current menunjuk ke head
+        while (current != nullptr) {
+            Node* temp = current; // Pointer temp menunjuk ke current
+            current = current->next; // Pointer current menunjuk ke node selanjutnya
+            delete temp; // Menghapus node temp (node head sebelumnya)
+        }
+        head = nullptr;
+        tail = nullptr;
+    }
+
+    void display() { // Menampilkan data produk
+        Node* current = head;
+        cout << "\nBerikut daftar Produk dan harga yang tersedia saat ini:" << endl;
+        cout << left << setw(20) << "Nama Produk" << "Harga" << endl; // Menampilkan header tabel nama produk dan harga
+        while (current != nullptr) {
+            cout << left << setw(20) << current->Nama_Produk << current->harga << endl;  // Menampilkan produk dan harga dan meluruskan ke tabel
+            current = current->next;
+        }
+        cout << endl;
+    }
+};
 
 int main() {
-    int A_2123, B_2123, C_2123; // Deklarasi variabel 3 dimensi isi array
+    DoublyLinkedList list; // Deklarasi objek list dari class DoublyLinkedList
+    
+    list.tambah_produk("Hanasui", 30000);
+    list.tambah_produk("Wardah", 50000);
+    list.tambah_produk("Skintific", 100000);
+    list.tambah_produk("Somethinc", 150000);
+    list.tambah_produk("Originote", 60000);
 
-    // Input user ukuran array tiga dimensi per dimensi
-    cout << "\nPemprograman Array 3 Dimensi dengan julan dan ukuran elemen dari user by Dadya Vio Hendraksa" << endl;
-    cout << "Inputkan jumlah elemen array dimensi A: ";
-    cin >> A_2123; // input ukuran elemen array nilai A
-    cout << "Inputkan jumlah elemen array dimensi B: ";
-    cin >> B_2123; // input ukuran elemen array nilai B
-    cout << "Inputkan jumlah elemen array dimensi C: ";
-    cin >> C_2123; // input ukuran elemen array nilai C
+    cout << "\n||||||-------Selamat datang di Toko Skincare Purwokerto by Dadya Vio Hendraksa_2123-------||||||" << endl;
+    list.display();
 
-    // Deklarasi dan inisialisasi 3 dimensi isi array
-    int arr[A_2123][B_2123][C_2123];
-
-    // Input elemen array yang telah ditetapkan
-    for (int a = 0; a < A_2123; a++)  // Perulangan untuk input elemen array A
-    {   for (int b = 0; b < B_2123; b++) // Perulangan untuk input elemen array B
-        {   for (int c = 0; c < C_2123; c++) // Perulangan untuk input elemen array C
-            {   cout << "Input Array 3 Dimensi[" << a << "][" << b << "][" << c << "] = ";
-                cin >> arr[a][b][c];}
+    while (true) { // Looping menu utama
+        cout << "\nMenu Toko Skincare Purwokerto" << endl;
+        cout << "1. Tambah Data" << endl;
+        cout << "2. Hapus Data" << endl;
+        cout << "3. Update Data" << endl;
+        cout << "4. Tambah Data Urutan Tertentu" << endl;
+        cout << "5. Hapus Data Urutan Tertentu" << endl;
+        cout << "6. Hapus Seluruh Data" << endl;
+        cout << "7. Tampilkan Data" << endl;
+        cout << "8. Exit" << endl;
+        int pilihan; // Deklarasi variabel pilihan
+        cout << "Pilih Menu: ";
+        cin >> pilihan; // Input pilihan menu
+        switch (pilihan) { // Switch case untuk memilih menu
+        case 1: {
+            string Nama_Produk;
+            int harga;
+            cout << "Masukkan nama produk: ";
+            cin >> Nama_Produk;
+            cout << "Masukkan harga: ";
+            cin >> harga;
+            list.tambah_produk(Nama_Produk, harga); // Memanggil fungsi tambah_produk
+            cout << "Produk berhasil ditambahkan teratas" << endl;
+            break;
         }
-        cout << endl;
-    }
-
-    // Menampilkan inputan elemen array yang telah di isi user
-    cout << "Tampilan array 3 Dimensi:" << endl;
-    for (int a = 0; a < A_2123; a++) // Perulangan untuk menampilkan input elemen array A
-    {    for (int b = 0; b < B_2123; b++) // Perulangan untuk menampilkan input elemen array B
-        {   for (int c = 0; c < C_2123; c++) // Perulangan untuk menampilkan input elemen array C
-            {   cout << arr[a][b][c] << " ";}
-            cout << endl;
+        case 2: {
+            list.hapus_produk(); // Memanggil fungsi hapus_produk
+            cout << "Produk teratas berhasil dihapus" << endl;
+            break;
         }
-        cout << endl;
-    }
+        case 3: { 
+            string Nama_Produk_Lama, Nama_Produk_Baru;
+            int Harga_Baru;
+            cout << "Input nama produk lama: ";
+            cin >> Nama_Produk_Lama;
+            cout << "Input nama produk baru: ";
+            cin >> Nama_Produk_Baru;
+            cout << "Input harga baru: ";
+            cin >> Harga_Baru;
+            bool updated = list.ubah_produk(Nama_Produk_Lama, Nama_Produk_Baru, Harga_Baru); // Memanggil fungsi ubah_produk
+            if (!updated) {
+                cout << "Data produk tidak ditemukan" << endl;
+            }
+            else {
+                cout << "Data produk berhasil diupdate" << endl;
+            }
+            break;
+        }
+        case 4: {
+            string Nama_Produk;
+            int harga, position;
+            cout << "Input nama produk: ";
+            cin >> Nama_Produk;
+            cout << "Input harga: ";
+            cin >> harga;
+            cout << "Input posisi: ";
+            cin >> position;
+            list.sisipkan_posisi_tertentu(Nama_Produk, harga, position); // Memanggil fungsi sisipkan_posisi_tertentu
+            cout << "Produk berhasil ditambahkan pada posisi " << position << endl;
+            break;
+        }
+        case 5: {
+            int position;
+            cout << "Input posisi yang ingin dihapus: ";
+            cin >> position;
+            list.hapus_posisi_tertentu(position); // Memanggil fungsi hapus_posisi_tertentu
 
+            break;
+        }
+        case 6: {
+            list.hapus_semua(); // Memanggil fungsi hapus_semua
+            break;
+        }
+        case 7: {
+            list.display(); // Memanggil fungsi display
+            break;
+        }
+        case 8: {
+            return 0; // Exit program
+        }
+        default: {
+            cout << "Input Invalid" << endl; 
+            break;
+        }
+        }
+    }
     return 0;
 }
+
 ```
 #### Output:
-![Screenshot Output Unguided 2](Output_Unguided-02_Dadya-Vio-H.png)
+![Screenshot Output Unguided 2 Part 1](Output_Unguided-02_Part-1_Dadya-Vio-H.png)</br>
+![Screenshot Output Unguided 2 Part 2](Output_Unguided-02_Part-2_Dadya-Vio-H.png)</br>
+![Screenshot Output Unguided 2 Part 3](Output_Unguided-02_Part-3_Dadya-Vio-H.png)</br>
 Program ini menggunakan 3 dimensi yang dimana kita harus input untuk jumlah elemen yang akan kita isi nantinya. disini saya menggunakan A, B, C untuk inisial dimensinya. pertama user akan diminta untuk mengisi jumlah elemen dari A, B, C. yang kemudian kita sebagai user akan mengisi nilai elemen dengan menggunakan angka disinilah kita menggunakan nested for yang sebanyak 3x karena array nya 3 dimensi yaitu nested A, B, C untuk menginput elemen tiap dimensinya, baris dan kolommnya. Selanjutnya yaitu menampilkan array 3 dimensi yang telah kita buat tadi seperti sebelumnya kita menggunakan nested for yang sebanyak 3x karena array nya 3 dimensi yaitu nested A, B, C untuk menampilkannya elemen tiap baris dan kolomnya. Secara sekilas seperti guided 1 akan tetapi disini kita menentukan jumlah elemen array nya.
 
-### 3. Buatlah program menu untuk mencari nilai Maksimum, Minimum dan Nilai rata – rata dari suatu array dengan input yang dimasukan oleh user!
-
-```C++
-/*
-Dadya Vio Hendraksa - 2311102123
-*/
-
-#include <iostream> // Library
-
-using namespace std;
-
-// Fungsi untuk mencari nilai minimum dari array yang telah diinputkan oleh pengguna
-int Minimal_2123(int arr[], int size)
-{   int nilai_min = arr[0];
-        for (int i = 1; i < size; ++i) 
-        {   if (arr[i] < nilai_min) 
-            {   nilai_min = arr[i];}
-        }
-    return nilai_min; // mengembalikan nilai dari variabel Minimal_2123
-}
-
-// Fungsi untuk mencari nilai maksimum dari array yang telah diinputkan oleh pengguna
-int Maksimal_2123(int arr[], int size) 
-{   int nilai_max = arr[0];
-        for (int i = 1; i < size; ++i) 
-        {   if (arr[i] > nilai_max) 
-            {   nilai_max = arr[i];}
-        }
-    return nilai_max; // mengembalikan nilai dari variabel Maksimal_2123
-}
-
-// Fungsi untuk mencari nilai rata-rata dari array yang telah diinputkan oleh pengguna
-double Rata_2123(int arr[], int size) 
-{   double jumlah = 0;
-        for (int i = 0; i < size; ++i)
-        {   jumlah += arr[i];}
-    return jumlah / size; // mengembalikan nilai dari variabel Rata_2123
-}
-
-int main() { // Fungsi utama
-    const int ukuran_maksimal_2123 = 50; // Batasan jumlah elemen array
-    int arr_2123[ukuran_maksimal_2123]; // Array untuk menyimpan elemen-elemen
-    int pilih_2123, size_2123; // deklarasi variabel
-
-    do { // Untuk melakukan Looping jika sudah output muncul
-        cout << "\nMenu Pencari Nilai Array by Dadya Vio Hendraksa" << endl; // Bagian menu
-        cout << "1. Nilai Minimum" << endl;
-        cout << "2. Nilai Maksimum" << endl;
-        cout << "3. Nilai Rata-rata" << endl;
-        cout << "4. Keluar" << endl;
-        cout << "Pilihan Anda: ";
-        cin >> pilih_2123; // Input menu
-
-        switch (pilih_2123) {
-            case 1:
-            case 2:
-            case 3:
-                // Input jumlah elemen array dari pengguna
-                cout << "Masukkan jumlah elemen array (maksimum " << ukuran_maksimal_2123 << "): ";
-                cin >> size_2123;
-
-                // Cek ukuran array apakah tidak melebihi batas jumlah elemen array
-                if (size_2123 <= 0 || size_2123 > ukuran_maksimal_2123) {
-                    cout << "Ukuran array tidak valid! Harap masukkan ukuran antara 1 dan " << ukuran_maksimal_2123 << endl;
-                    break;
-                }
-
-                // Menginputkan nilai elemen-elemen array
-                cout << "Masukkan elemen-elemen array:" << endl;
-                for (int i = 0; i < size_2123; ++i) {
-                    cout << "Indeks [" << i << "]: ";
-                    cin >> arr_2123[i];
-                }
-
-                // Memproses pilihan pengguna
-                switch (pilih_2123) {
-                    case 1: // Mencari nilai minimum dan menampilkannya dengan memanggil fungsi Minimal_2123
-                        cout << "Nilai Minimum: " << Minimal_2123(arr_2123, size_2123) << endl;
-                        break;
-                    case 2: // Mencari nilai minimum dan menampilkannya dengan memanggil fungsi Maksimal_2123
-                        cout << "Nilai Maksimum: " << Maksimal_2123(arr_2123, size_2123) << endl;
-                        break;
-                    case 3: // Mencari nilai minimum dan menampilkannya dengan memanggil fungsi Rata_2123
-                        cout << "Nilai Rata-rata: " << Rata_2123(arr_2123, size_2123) << endl;
-                        break;
-                }
-                break;
-            case 4: // Jika memilih 4 maka akan keluar dari program ini
-                cout << "Anda telah keluar dari program ini. Terima kasih." << endl;
-                break;
-            default: // Bagian ini dijalankan jika input jumlah ukuran array lebih dari batas maksimal
-                cout << "Input junlah elemen array salah, Tolong inputkan angka yang sesuai." << endl;
-                break;
-        }
-
-    } while (pilih_2123 != 4); // Input selain 4 maka akan melakukan perulangan
-
-    return 0;
-}
-```
-#### Output:
-![Screenshot Output Unguided 3](Output_Unguided-03_Dadya-Vio-H.png)
-Program ini berguna untuk mencari min, max, dan median dari array yang diinput user. Saya disini menggunakan 3 fungsi yaitu Minimal_2123, Maksimal_2123, Rata_2123 untuk memudahkan dalam pemprosesan dan penghitungan mencari min, max, dan median dari array dengan menggunakan looping for dan pecabangan if-else. Selanjutnya pada Fungsi utama main pertama kita deklarasikan array, jumlah max elemen array dan variabel pilih_2123, size_2123. Kemudian disini saya menggunakan do while untuk melakukan perulangan menunya, didalam nya terdapat menu untuk memilih mencari nilai apa yang kita inginkan. <br/>
-
-Kemudian ada switch pertama dari case 1 samapai case 4. untuk case 1 sampai case 3 disini saya jadikan 1 karena ada beberapa kesamaan untuk input jumlah elemen array, cek ukuran jumlah elemen array dengan perulangan if, dan input nilai elemen array dengam menggunakan looping for. Selanjutnya terdapat switch kedua didalam case 1-3 switch pertama yang berguna untuk memanggil nilai dari 3 fungsi yang kita buat tadi diluat fungsi utama main yang harusnya teroutput sesuai dengan pilihan menu yang dipilih user. Unuk penjelasan case 4 dan default switch pertama yaitu case 4 untuk keluar dari program ini sedangkan default untuk looping jika user input jumlah elemen arraynya salah.
 ## Kesimpulan
 Array sangat membantu dalam efisiensi program karena dapat mempermudah dalam menyimpan dan mengakses data yang terkumpul dalam satu variabel, dari pada menggunakan banyak variabel. Dengan adanya pengurutan data indeks yang tetap dari 0 ini memberikan kemudahan dalam membaca alamat elemen tersebut. Akan tetapi perlu diketahui bahwa menggunakan array yang lebih dari 2 dimensi tidaklah efisien. Semua tergantung program yang akan dibuat dan pembangunan sturuktur data dan algoritma yang digunakan sebelum melakukan pemprograman.
 
