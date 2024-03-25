@@ -965,4 +965,4 @@ Kesimpulannya setelah mempelajari linked list, diketahui bahwa struktur data ini
 ## Referensi
 [1] Shofyann Hanief,et al., Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Yogyakarta: Andi Publisher, 2020. <br/>
 [2] Joseph Teguh Santoso., STRUKTUR DATA dan ALGORITMA (Bagian 1). Semarang: Yayasan Prima Agus Teknik, 2021.</br>
-[2] Malik, D.S., C++ Programming. Boston: Course Technology, 2023.
+[3] Malik, D.S., C++ Programming. Boston: Course Technology, 2023.
