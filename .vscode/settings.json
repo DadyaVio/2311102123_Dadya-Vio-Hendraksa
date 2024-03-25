@@ -5,6 +5,7 @@
         "iostream": "cpp",
         "array": "cpp",
         "string_view": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "typeinfo": "cpp"
     }
 }
