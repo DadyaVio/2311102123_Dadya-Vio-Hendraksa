@@ -3,26 +3,35 @@
 
 ## Dasar Teori
 
-Array merupakan struktur data yang paling dasar. Satu blok memori dialokasikan untuk seluruh array untuk menampung elemen-elemen array.  Elemen  array  dapat  diakses  dalam  waktu  yang  konstan  dengan  menggunakan  indeks elemen tertentu sebagai subskrip. Untuk  mengakses  elemen  array,  alamat  elemen  dihitung  sebagai  offset  dari  alamat dasar   array   dan   satu   perkalian   diperlukan   untuk   menghitung   apa   yang   seharusnya ditambahkan  ke  alamat  dasar  untuk  mendapatkan  alamat  memori  elemen. 
+Daftar tertaut/Linked List adalah struktur data yang digunakan untuk menyimpan kumpulan data. 
+Daftar tertaut memiliki properti berikut:
+• Elemen yang berurutan dihubungkan oleh pointer
+• Elemen terakhir menunjuk ke NULL
+• Dapat tumbuh atau menyusut dalam ukuran selama eksekusi program
+• Dapat dibuat selama diperlukan (sampai memori sistem habis)
+• Tidak membuang-buang ruang memori (tetapi membutuhkan memori ekstra untuk 
+pointer). Ini mengalokasikan memori saat daftar bertambah.
 
-Keuntungan dari Array<br/>
-   - Sederhana dan mudah digunakan
-   - Akses lebih cepat ke elemen (akses konstan)<br/>
+Keuntungan Linked List
+Daftar tertaut/Liinked List memiliki kelebihan dan kekurangan. Keuntungan dari daftar tertaut adalah mereka dapat diperluas dalam waktu yang konstan. Untuk membuat array, kita harus mengalokasikan memori untuk sejumlah elemen tertentu. Untuk menambahkan lebih banyak elemen ke array saat penuh, kita harus membuat array baru dan menyalin array lama ke dalam array baru. Ini bisa memakan banyak waktu. Dengan daftar tertaut, kita dapat memulai dengan ruang hanya untuk satu elemen yang dialokasikan dan menambahkan elemen baru dengan mudah tanpa perlu melakukan penyalinan dan pengalokasian ulang.
 
-Kekurangan Array<br/>
-   - Mengalokasikan  semua  memori  yang  dibutuhkan  di  depan  dan  membuang-buang ruang memori untuk indeks dalam array yang kosong.
-   - Ukuran    tetap:    Ukuran    larik    bersifat    statis    (tentukan    ukuran    larik    sebelum menggunakannya).
-   - Alokasi  satu  blok:  Untuk  mengalokasikan  array  itu  sendiri  di  awal,  terkadang  tidak mungkin  untuk  mendapatkan  memori  untuk  array  yang  lengkap(jika  ukuran  array besar).
-   - Penyisipan berbasis posisi kompleks: Untuk menyisipkan elemen pada posisi tertentu, kita  mungkin  perlu  menggeser  elemen  yang  ada.  Ini  akan  membuat  posisi  bagi  kita untuk memasukkan elemen baru pada posisi yang diinginkan. Jika posisi di mana kita ingin menambahkan elemen di awal, maka operasi pemindahan lebih mahal.
+Kerugian Linked List
+Ada sejumlah masalah dengan daftar tertaut. Kerugian utama dari daftar tertaut adalah waktu akses ke elemen individual. Meskipun alokasi penyimpanan dinamis merupakan keuntungan besar, overhead dengan menyimpan dan mengambil data dapat membuat perbedaan besar. Terkadang daftar tertaut sulit untuk dimanipulasi. Jika item terakhir dihapus, yang terakhir tetapi satu harus mengubah penunjuknya untuk menyimpan referensi NULL Ini mengharuskan daftar dilintasi untuk menemukan tautan terakhir kecuali satu, dan penunjuknya disetel ke referensi NULL. Akhirnya, daftar tertaut membuang-buang memori dalam hal poin referensi tambahan.
 
-1. Array 1 Dimensi<br/>
-Array satu dimensi adalah tipe variabel yang terdiri dari kumpulan data dengan tipe yang sama yang disusun dalam satu baris atau satu dimensi. Setiap elemen di dalam array memiliki sebuah indeks atau nomor yang digunakan untuk mengakses elemen tersebut. Indeks dimulai dari 0 dan berakhir pada jumlah elemen dikurangi satu. Array satu dimensi merupakan kumpulan data yang disusun dalam satu baris atau kolom, terdiri dari elemen-elemen dengan tipe yang sama. Setiap elemen dalam array satu dimensi dapat diakses menggunakan indeksnya. Array satu dimensi sering digunakan untuk menampung sejumlah elemen dengan tipe data yang sama, seperti angka, nilai, atau teks. Penggunaan array memungkinkan penyimpanan dan akses data secara terstruktur dalam satu variabel, yang lebih efisien daripada menggunakan sejumlah variabel terpisah.
+1. Single Linked List<br/>
+Umumnya "daftar tertaut" berarti daftar tertaut tunggal. Daftar ini terdiri dari sejumlah node di mana setiap node memiliki pointer berikutnya ke elemen berikut. Tautan simpul terakhir dalam daftar adalah NULL, yang menunjukkan akhir daftar. Operasi Dasar pada Daftar:
+• Melintasi daftar
+• Memasukkan item ke dalam daftar
+• Menghapus item dari daftar
+Masing-masing komponen sering disebut dengan simpul atau node atau verteks. Pointer adalah alamat elemen. Setiap simpul pada dasarnya dibagi atas dua bagian pertama disebut bagian isi atau informasi atau data yang berisi nilai yang disimpan oleh simpul. Bagian kedua disebut bagian pointer yang berisi alamat dari node berikutnya atau sebelumnya. Dengan menggunakan struktur seperti ini, linked list dibentuk dengan cara menunjuk pointer next suatu elemen ke elemen yang mengikutinya. Pointer next pada elemen terakhir merupakan NULL, yang menunjukkan akhir dari suatu list. Elemen pada awal suatu list disebut head dan elemen terakhir dari suatu list disebut tail.
 
-2. Array 2 Dimensi<br/>
-Array dua dimensi adalah struktur data yang terdiri dari baris dan kolom, di mana setiap elemen dapat diakses menggunakan indeks yang terdapat di dalamnya. Dalam array dua dimensi, setiap elemen memiliki dua indeks, yaitu indeks baris dan indeks kolom. Indeks baris menunjukkan posisi elemen dalam baris, sementara indeks kolom menunjukkan posisi elemen dalam kolom. Jadi, array dua dimensi digunakan untuk menyimpan data yang terorganisir dalam bentuk tabel dengan baris dan kolom, atau untuk data yang memiliki struktur yang lebih kompleks, seperti matriks.
-
-3. Array 3 Dimensi/Multidimensi<br/>
-Array tiga dimensi adalah tipe array yang terdiri dari satu baris, satu kolom, dan beberapa lapisan. Array tiga dimensi sering digunakan untuk menyimpan data dalam bentuk tabel yang meliputi baris, kolom, dan halaman, atau untuk menyimpan data yang memiliki struktur yang kompleks seperti matriks, sehingga memiliki ukuran memori yang lebih besar. Ini memungkinkan penyimpanan dan akses data yang terstruktur dalam satu variabel, meningkatkan efisiensi dalam pengelolaan data. Array tiga dimensi sering digunakan untuk menyimpan data dalam bentuk tabel yang meliputi baris, kolom, dan halaman, atau untuk menyimpan data yang memiliki struktur yang kompleks seperti matriks. Untuk mengakses elemen dalam array tiga dimensi, kita dapat menggunakan perulangan nested.
+2. Double Linked List<br/>
+Double Linked List adalah struktur data Linked List yang mirip dengan Single Linked List, namun dengan tambahan satu pointer tambahan pada setiap
+simpul yaitu pointer prev yang menunjuk ke simpul sebelumnya. Dengan adanya pointer prev, Double Linked List memungkinkan untuk melakukan operasi penghapusan dan penambahan pada simpul mana saja secara efisien. Setiap simpul pada Double Linked List memiliki tiga elemen penting, yaitu elemen data (biasanya berupa nilai), pointer next yang menunjuk ke simpul berikutnya, dan pointer prev yang menunjuk ke simpul sebelumnya. Keuntungan dari daftar tertaut ganda (juga disebut daftar tertaut dua arah) adalah bahwa dengan adanya simpul dalam daftar, kita dapat menavigasi ke dua arah. Sebuah node dalam daftar tertaut tunggal tidak dapat dihapus kecuali kita memiliki penunjuk ke pendahulunya. Tetapi dalam daftar tertaut ganda, kita dapat menghapus sebuah node bahkan jika kita tidak memiliki alamat node sebelumnya (karena setiap node memiliki pointer kiri yang menunjuk ke node sebelumnya dan dapat bergerak mundur).
+Kerugian utama dari daftar tertaut ganda adalah:
+• Setiap node membutuhkan pointer tambahan, membutuhkan lebih banyak ruang.
+• Penyisipan atau penghapusan node membutuhkan waktu sedikit lebih lama (lebih 
+banyak operasi pointer)
 
 ## Guided 
 
@@ -266,7 +275,7 @@ int main() {
   return 0;
 }
 ```
-Program ini
+Pemprograman ini merupakan program single linked list non-circular yang berisi fungsi-fungsi untuk menambahkan data pada linked list, menghitung jumlah data pada linked list, menghapus data pada linked list, mengubah data pada linked list, dan menampilkan data pada linked list. Program ini menggunakan struct Node yang berisi data dan pointer next. Dimana struct Node: Ini adalah struktur data untuk merepresentasikan node dalam linked list. int data: Menyimpan nilai data pada node. Node *next: Pointer yang menunjukkan ke node berikutnya dalam linked list. Jadi, pada fungsi main kita hanya memanggil fungsi-fungsi yang telah didefinisikan sebelumnya.
 
 ### 2. Program Latihan Double Linked List
 
@@ -398,7 +407,14 @@ int main() {
   return 0;
 }
 ```
-Program ini
+Program yang disediakan merupakan sebuah aplikasi yang mengimplementasikan Doubly Linked List. Doubly Linked List adalah struktur data yang memungkinkan penyimpanan data secara terurut dengan kemampuan untuk menambah, menghapus, dan mengubah data. Pemprograman ini menggunakan sebuah class bernama DoublyLinkedList yang menyediakan beberapa method, antara lain:</br>
+push: Method ini digunakan untuk menambahkan data ke dalam list.</br>
+pop: Method ini digunakan untuk menghapus data dari list.</br>
+update: Method ini digunakan untuk mengubah data yang sudah ada di dalam list.</br>
+deleteAll: Method ini digunakan untuk menghapus semua data yang ada di dalam list.</br>
+display: Method ini digunakan untuk menampilkan data yang ada di dalam list.</br>
+Program menggunakan struktur kontrol switch-case untuk memungkinkan pengguna memilih operasi yang diinginkan, seperti menambahkan, menghapus, mengubah, atau menampilkan data. Program akan terus berjalan hingga pengguna memilih untuk keluar (exit).</br>
+Dengan implementasi Doubly Linked List, program ini memberikan kemudahan dalam mengelola data dengan fleksibilitas tambahan karena setiap node dalam list memiliki pointer yang menunjuk baik ke node sebelumnya maupun node berikutnya.
 
 ## Unguided 
 
@@ -665,7 +681,7 @@ int main() {
 #### Output:
 ![Screenshot Output Unguided 1 Part 1](Output_Unguided-01_Part-1_Dadya-Vio-H.png)</br>
 ![Screenshot Output Unguided 1 Part 2](Output_Unguided-01_Part-2_Dadya-Vio-H.png)</br>
-Program ini
+Program ini adalah program yang mengimplementasikan single linked list dengan operasi menambahkan data di depan, belakang, dan tengah, menghapus data di depan, belakang, dan tengah, serta mengubah data di depan, belakang, dan tengah. Program ini memiliki 3 fungsi utama yaitu inisialisasi linked list, mengecek apakah linked list kosong, dan menampilkan isi linked list. Program ini memiliki 7 fungsionalitas utama yaitu menambahkan data di depan, belakang, dan tengah, menghapus data di depan, belakang, dan tengah, serta mengubah data di depan, belakang, dan tengah. Program ini memiliki 7 data yang diinputkan secara manual yaitu John, Jane, Michael, Yusuke, Akechi, Hoshino, dan Karin. Program ini memiliki 5 operasi yang dilakukan yaitu menggabungkan data A, menghapus data Akechi, menambahkan data Futaba di antara John dan Jane, menambahkan data Igor di awal, mengubah data Michael menjadi Reyn, dan menampilkan seluruh data.
 
 ### 2. Modifikasi Guided Double Linked List dilakukan dengan penambahan operasi untuk menambah data, menghapus, dan update di tengah / di urutan tertentu yang diminta. Selain itu, buatlah agar tampilannya menampilkan Nama produk dan harga.</br> ![Screenshot Soal Unguided 2 Part 1](Soal_Unguided-02_Part-1_Dadya-Vio-H.png)<br/> ![Screenshot Soal Unguided 2 Part 2](Soal_Unguided-02_Part-2_Dadya-Vio-H.png)<br/> Case:</br> 1. Tambahkan produk Azarine dengan harga 65000 diantara Somethinc dan Skintific</br> 2. Hapus produk wardah</br> 3. Update produk Hanasui menjadi Cleora dengan harga 55.000</br> 4. Tampilkan menu seperti dibawah ini:</br> 
 
@@ -943,11 +959,11 @@ int main() {
 ![Screenshot Output Unguided 2 Part 1](Output_Unguided-02_Part-1_Dadya-Vio-H.png)</br>
 ![Screenshot Output Unguided 2 Part 2](Output_Unguided-02_Part-2_Dadya-Vio-H.png)</br>
 ![Screenshot Output Unguided 2 Part 3](Output_Unguided-02_Part-3_Dadya-Vio-H.png)</br>
-Program ini 
+Pemprograman ini merupakan program yang digunakan untuk mengelola data produk skincare di sebuah toko skincare. Program ini menggunakan konsep double linked list untuk menyimpan data produk skincare. Program ini memiliki beberapa fitur yaitu menambah data produk, menghapus data produk, mengubah data produk, menambah data produk pada posisi tertentu, menghapus data produk pada posisi tertentu, menghapus semua data produk, dan menampilkan data produk. Program ini akan terus berjalan hingga user memilih menu exit. Ada beberapa fungsi yang digunakan dalam program ini yaitu tambah_produk_2123, hapus_produk_2123, ubah_produk_2123, sisipkan_posisi_tertentu_2123, hapus_posisi_tertentu_2123, hapus_semua_2123, dan display_2123. Sesuai dengan fitur yang ada tadi. Sehingga pada fungsi main, terdapat switch case yang digunakan untuk memilih menu yang diinginkan oleh user untuk memanggil fungsi yang sesuai dengan menu yang dipilih.
 
 ## Kesimpulan
-Kesimpulannya
-
+Kesimpulannya setelah mempelajari linked list, diketahui bahwa struktur data ini menawarkan fleksibilitas dalam manajemen data secara dinamis. Konsep dasar linked list yang terdiri dari node-node yang saling terhubung membuatnya sangat cocok untuk situasi di mana perlu menambah atau menghapus data dengan cepat tanpa memerlukan realokasi memori besar. Keuntungan utamanya terletak pada efisiensi operasi penyisipan dan penghapusan di awal atau akhir linked list dengan kompleksitas waktu konstan. Namun, kita juga perlu mempertimbangkan kelemahan linked list seperti penggunaan memori tambahan untuk menyimpan pointer dan keterbatasan dalam akses langsung ke elemen-elemen data, yang dapat mempengaruhi kinerja terutama dalam aplikasi dengan jumlah data besar. Dengan memperhitungkan karakteristik dan kompleksitas operasi linked list, kita dapat membuat keputusan yang tepat dalam pemilihan struktur data yang paling sesuai dengan kebutuhan kita.
 ## Referensi
 [1] Shofyann Hanief,et al., Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Yogyakarta: Andi Publisher, 2020. <br/>
-[2] Joseph Teguh Santoso., STRUKTUR DATA dan ALGORITMA (Bagian 1). Semarang: Yayasan Prima Agus Teknik, 2021.
+[2] Joseph Teguh Santoso., STRUKTUR DATA dan ALGORITMA (Bagian 1). Semarang: Yayasan Prima Agus Teknik, 2021.</br>
+[2] Malik, D.S., C++ Programming. Boston: Course Technology, 2023.
