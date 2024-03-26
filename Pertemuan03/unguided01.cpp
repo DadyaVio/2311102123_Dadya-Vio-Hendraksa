@@ -1,132 +1,123 @@
-#include <iostream> // mengatur input output
-#include <iomanip> // mengatur layout output
-#include <string> // mengatur string
+#include <iostream> // Library standar yang digunakan untuk input dan output
+#include <iomanip> // Library standar yang digunakan untuk manipulasi input dan output
+#include <string> // Library standar yang digunakan untuk manipulasi string
 
-using namespace std; // menggunakan standar library
+using namespace std;
 
-// Deklarasi Struct Node
-struct Node {
+struct Node { // Membuat struct Node untuk menyimpan data mahasiswa yang berisi nama dan umur
     string Nama_2123;
     int Umur_2123;
-    Node* next; // Pointer next
+    Node* next;
 };
 
-Node* head = nullptr; // Deklarasi head
-Node* tail = nullptr; // Deklarasi tail
+Node* head = nullptr;
+Node* tail = nullptr;
 
-// Inisialisasi Linked List
-void inisialisasi_2123() {
+void inisialisasi_2123() { // Inisialisasi awal linked list dengan head dan tail bernilai nullptr
     head = nullptr;
     tail = nullptr;
 }
 
-// Mengecek apakah linked list kosong
-bool apakah_kosong_2123() {
+bool apakah_kosong_2123() { // Mengecek apakah linked list kosong atau tidak
     return head == nullptr;
 }
 
-// Menambah data di depan linked list
-void tambah_depan_2123(string Nama, int Umur) {
-    Node* newNode = new Node; // Membuat node baru
-    newNode->Nama_2123 = Nama; // Menambahkan data Nama
-    newNode->Umur_2123 = Umur; // Menambahkan data Umur
-    newNode->next = head; // Pointer next menunjuk ke head
-    head = newNode; // Head menunjuk ke newNode
+void tambah_depan_2123(string Nama, int Umur) { // Menambahkan data mahasiswa di depan linked list
+    Node* newNode = new Node;
+    newNode->Nama_2123 = Nama;
+    newNode->Umur_2123 = Umur;
+    newNode->next = head;
+    head = newNode;
 
     if (tail == nullptr) {
         tail = newNode;
     }
 }
 
-// Menambah data di belakang linked list
-void tambah_belakang_2123(string Nama, int Umur) {
+void tambah_belakang_2123(string Nama, int Umur) { // Menambahkan data mahasiswa di belakang linked list
     Node* newNode = new Node;
     newNode->Nama_2123 = Nama;
     newNode->Umur_2123 = Umur;
-    newNode->next = nullptr; // Pointer next menunjuk ke nullptr
+    newNode->next = nullptr;
 
     if (apakah_kosong_2123()) {
-        head = tail = newNode; // Jika kosong, head dan tail menunjuk ke newNode
+        head = tail = newNode;
     } else {
-        tail->next = newNode; // Pointer next tail menunjuk ke newNode
-        tail = newNode; // Tail menunjuk ke newNode
+        tail->next = newNode;
+        tail = newNode;
     }
 }
 
-// Menambah data di tengah linked list berdasarkan posisi data
-void tambah_tengah_2123(string Nama, int Umur, int Posisi) {
-    if (Posisi <= 1 || apakah_kosong_2123()) { // Jika posisi kurang dari sama dengan 1 atau linked list kosong maka tambah di depan linked list
+void tambah_tengah_2123(string Nama, int Umur, int Posisi) { // Menambahkan data mahasiswa di tengah linked list berdasarkan posisi yang diinputkan oleh user
+    if (Posisi <= 1 || apakah_kosong_2123()) {
         cout << "Posisi tidak valid atau list kosong, Maka di tambah ke depan." << endl;
         tambah_depan_2123(Nama, Umur);
         return;
     }
 
-    Node* newNode = new Node;
+    Node* newNode = new Node; // Membuat node baru untuk menyimpan data mahasiswa yang akan ditambahkan ke linked list
     newNode->Nama_2123 = Nama;
     newNode->Umur_2123 = Umur;
 
-    Node* current = head; // Pointer current menunjuk ke head linked list sekarang
-    int currentPosition = 1; // Inisialisasi posisi saat ini adalah 1 (head) linked list sekarang
+    Node* current = head;
+    int currentPosition = 1;
 
-    while (current->next != nullptr && currentPosition < Posisi - 1) { // Looping sampai posisi sebelum posisi yang diinginkan (Posisi - 1)
-        current = current->next; // Pointer current menunjuk ke node selanjutnya
-        currentPosition++; // Posisi saat ini bertambah
+    while (current->next != nullptr && currentPosition < Posisi - 1) { // Mencari posisi node yang akan ditambahkan data mahasiswanya berdasarkan posisi yang diinputkan oleh user
+        current = current->next;
+        currentPosition++;
     }
 
-    newNode->next = current->next; // Pointer next newNode menunjuk ke node setelah current
-    current->next = newNode; // Pointer next current menunjuk ke newNode
+    newNode->next = current->next;
+    current->next = newNode;
 }
 
-// Menghapus data di depan linked list
-void hapus_depan_2123() {
+void hapus_depan_2123() { // Menghapus data mahasiswa di depan linked list
     if (apakah_kosong_2123()) {
         cout << "List kosong, Jadi tidak ada yang dapat dihapus." << endl;
         return;
     }
 
-    Node* temp = head; // Pointer temp menunjuk ke head 
-    head = head->next; // Pointer head menunjuk ke node selanjutnya
-    delete temp; // Menghapus node temp (node head sebelumnya)
+    Node* temp = head;
+    head = head->next;
+    delete temp;
 
     if (head == nullptr) {
         tail = nullptr;
     }
 }
 
-// Menghapus data di belakang linked list
-void hapus_belakang_2123() {
+void hapus_belakang_2123() { // Menghapus data mahasiswa di belakang linked list 
     if (apakah_kosong_2123()) {
         cout << "List kosong, Jadi tidak ada yang dapat dihapus." << endl;
         return;
     }
 
     if (head == tail) {
-        delete head; // Menghapus node head
-        head = tail = nullptr; // Jika head dan tail sama, maka head dan tail menunjuk ke nullptr
+        delete head;
+        head = tail = nullptr;
         return;
     }
 
     Node* current = head;
-    while (current->next != tail) {
-        current = current->next; // Pointer current menunjuk ke node selanjutnya
+    while (current->next != tail) { // Mencari node yang berada sebelum node yang akan dihapus di belakang linked list 
+        current = current->next;
     }
     delete tail;
-    tail = current; // Pointer tail menunjuk ke node sebelumnya (node yang baru terakhir)
-    tail->next = nullptr; // Pointer next tail menunjuk ke nullptr
+    tail = current;
+    tail->next = nullptr;
 }
 
-// Menghapus data di tengah linked list berdasarkan posisi data
-void hapus_tengah_2123(int Posisi) {
+void hapus_tengah_2123(int Posisi) { // Menghapus data mahasiswa di tengah linked list berdasarkan posisi yang diinputkan oleh user
     if (Posisi <= 1 || apakah_kosong_2123()) {
         cout << "Posisi tidak valid atau list kosong, Jadi tidak ada yang dapat dihapus." << endl;
         return;
     }
 
-    Node* current = head; // Pointer current diinisialisasi head
-    Node* previous = nullptr; // Pointer previous diinisialisasi nullptr
+    Node* current = head;
+    Node* previous = nullptr; // Node sebelum node yang akan dihapus di tengah linked list 
     int currentPosition = 1;
 
-    while (current->next != nullptr && currentPosition < Posisi) {
+    while (current->next != nullptr && currentPosition < Posisi) { // Mencari posisi node yang akan dihapus data mahasiswanya berdasarkan posisi yang diinputkan oleh user
         previous = current;
         current = current->next;
         currentPosition++;
@@ -137,16 +128,15 @@ void hapus_tengah_2123(int Posisi) {
         return;
     }
 
-    previous->next = current->next; // Pointer next previous menunjuk ke node setelah current (node yang dihapus)
-    delete current; // Menghapus node current (node yang dihapus)
+    previous->next = current->next; // Menghapus node yang ditunjuk oleh current 
+    delete current;
 
     if (previous->next == nullptr) {
-        tail = previous; // Jika node yang dihapus adalah node terakhir, maka tail menunjuk ke node sebelumnya (node yang baru terakhir)
+        tail = previous;
     }
 }
 
-// Mengubah data di depan linked list
-void ubah_depan_2123(string Nama, int Umur) {
+void ubah_depan_2123(string Nama, int Umur) { // Mengubah data mahasiswa di depan linked list
     if (apakah_kosong_2123()) {
         cout << "List kosong, Maka tidak ada yang dapat diubah." << endl;
         return;
@@ -156,8 +146,7 @@ void ubah_depan_2123(string Nama, int Umur) {
     head->Umur_2123 = Umur;
 }
 
-// Mengubah data di belakang linked list
-void ubah_belakang_2123(string Nama, int Umur) {
+void ubah_belakang_2123(string Nama, int Umur) { // Mengubah data mahasiswa di belakang linked list 
     if (apakah_kosong_2123()) {
         cout << "List kosong, Maka tidak ada yang dapat diubah." << endl;
         return;
@@ -167,8 +156,7 @@ void ubah_belakang_2123(string Nama, int Umur) {
     tail->Umur_2123 = Umur;
 }
 
-// Mengbah data di tengah linked list berdasarkan posisi data
-void ubah_tengah_2123(string Nama, int Umur, int Posisi) {
+void ubah_tengah_2123(string Nama, int Umur, int Posisi) { // Mengubah data mahasiswa di tengah linked list berdasarkan posisi yang diinputkan oleh user
     if (Posisi <= 1 || apakah_kosong_2123()) {
         cout << "Posisi tidak valid atau list kosong, Jadi tidak ada yang dapat diubah." << endl;
         return;
@@ -177,12 +165,12 @@ void ubah_tengah_2123(string Nama, int Umur, int Posisi) {
     Node* current = head;
     int currentPosition = 1;
 
-    while (current->next != nullptr && currentPosition < Posisi) { // Looping sampai posisi yang diinginkan
+    while (current->next != nullptr && currentPosition < Posisi) { // Mencari posisi node yang akan diubah datanya berdasarkan posisi yang diinputkan oleh user
         current = current->next;
         currentPosition++;
     }
 
-    if (currentPosition < Posisi) { // Jika posisi tidak ada maka tidak ada yang diubah
+    if (currentPosition < Posisi) {
         cout << "Posisi tidak ada, Maka tidak ada yang diubah" << endl;
         return;
     }
@@ -191,62 +179,169 @@ void ubah_tengah_2123(string Nama, int Umur, int Posisi) {
     current->Umur_2123 = Umur;
 }
 
-// Tampilkan isi data linked list
-void display() {
+void display() { // Menampilkan data mahasiswa yang ada di linked list 
     if (apakah_kosong_2123()) {
         cout << "List kosong." << endl;
         return;
     }
 
     Node* current = head;
-    cout << left << setw(10) << "|Nama|" << right << setw(5) << " |Umur|" << endl; // Memberikan penjelasan label pada data
+    cout << left << setw(10) << "|Nama|" << right << setw(5) << " |Umur|" << endl; // Menampilkan header tabel data mahasiswa 
     while (current != nullptr) {
-        cout << left << setw(10) << current->Nama_2123 << right << setw(5) << current->Umur_2123 << endl; // Meluruskan data sesuai label
+        cout << left << setw(10) << current->Nama_2123 << right << setw(5) << current->Umur_2123 << endl; // Menampilkan data mahasiswa dan merapikan tampilan data mahasiswa
         current = current->next;
     }
 }
 
-int main() {
-    inisialisasi_2123(); // Inisialisasi linked list
+int main() { // Fungsi utama yang akan dieksekusi pertama kali saat program dijalankan
+    inisialisasi_2123(); // Memanggil fungsi inisialisasi_2123 untuk menginisialisasi linked list dengan head dan tail bernilai nullptr
 
-    // Menambahkan data ke linked list sesuai permintaan user
     cout << "\n||||||-------Program data link list by Dadya Vio Hendraksa_2123-------||||||" << endl;
-    tambah_depan_2123("John", 19); 
-    tambah_belakang_2123("Jane", 20);
-    tambah_belakang_2123("Michael", 18);
-    tambah_belakang_2123("Yusuke", 19);
-    tambah_belakang_2123("Akechi", 20);
-    tambah_belakang_2123("Hoshino", 18);
-    tambah_belakang_2123("Karin", 18);
+    
+    int jumlah_data; // Deklarasi variabel jumlah_data untuk menyimpan jumlah data mahasiswa yang akan diinputkan oleh user
+    cout << "Masukkan jumlah data mahasiswa: ";
+    cin >> jumlah_data; // Menginputkan jumlah data mahasiswa yang akan diinputkan oleh user
 
-    // Menampilkan isi linked list sebelum operasi
-    cout << "-----List data sebelum operasi dilakukan (A)-----" << endl;
-    display(); // Menampilkan data
-    cout << endl;
+    for (int i = 0; i < jumlah_data; ++i) { // Perulangan untuk menginputkan data mahasiswa sebanyak jumlah_data yang diinputkan oleh user
+        string nama;
+        int umur;
+        cout << "\nData Mahasiswa ke-" << i + 1 << endl;
+        cout << "Nama: ";
+        cin >> nama;
+        cout << "Umur: ";
+        cin >> umur;
+        tambah_belakang_2123(nama, umur); // Memanggil fungsi tambah_belakang_2123 untuk menambahkan data mahasiswa ke linked list
+    }
+    
+    cout << "\nData Mahasiswa Terbaru:" << endl;
+    display(); // Memanggil fungsi display untuk menampilkan data mahasiswa yang ada di linked list
 
-    // Operasi menghapus data Akechi
-    cout << "-----Menghapus data 'Akechi' (B)-----" << endl;
-    hapus_tengah_2123(5); // Menghapus data Akechi pada posisi 5
-    display();
-    cout << endl;
+    int pilihan; // Deklarasi variabel pilihan untuk menyimpan pilihan menu yang diinputkan oleh user
+    do { // Perulangan untuk menampilkan menu pilihan yang dapat dilakukan oleh user
+        cout << "\nMenu Data Mahasiswa:\n1. Tambah Data di Depan\n2. Tambah Data di Belakang\n3. Tambah Data di Tengah\n";
+        cout << "4. Hapus Data di Depan\n5. Hapus Data di Belakang\n6. Hapus Data di Tengah\n";
+        cout << "7. Ubah Data di Depan\n8. Ubah Data di Belakang\n9. Ubah Data di Tengah\n";
+        cout << "10. Menampilkan Data\n0. Keluar\n";
+        cout << "Pilihan Anda: ";
+        cin >> pilihan; // Menginputkan pilihan menu yang diinginkan oleh user
 
-    // Operasi menambahkan data Futaba di antara John dan Jane
-    cout << "-----Menambahkan data 'Futaba' diantara 'John' dan 'Jane' (C)-----" << endl;
-    tambah_tengah_2123("Futaba", 18, 2); // Memasukkan data Futaba di posisi 2
-    display();
-    cout << endl;
-
-    // Operasi menambahkan data Igor di awal
-    cout << "-----Menambahkan data 'Igor' didepan (D)-----" << endl;
-    tambah_depan_2123("Igor", 20);
-    display();
-    cout << endl;
-
-    // Operasi mengubah data Michael menjadi Reyn
-    cout << "-----Menghubah data 'Michael' menjadi 'Reyn' dan Tampilan seluruh data (E dan F)-----" << endl;
-    ubah_tengah_2123("Reyn", 18, 5); // Michael pada posisi 5
-    display();
-    cout << endl;
+        switch (pilihan) { // Percabangan switch case untuk mengeksekusi fungsi sesuai dengan pilihan menu yang diinputkan oleh user
+            case 1: { // Pilihan menu 1 untuk menambahkan data mahasiswa di depan linked list
+                string nama;
+                int umur;
+                cout << "Masukkan Nama: ";
+                cin >> nama;
+                cout << "Masukkan Umur: ";
+                cin >> umur;
+                tambah_depan_2123(nama, umur); // Memanggil fungsi tambah_depan_2123 untuk menambahkan data mahasiswa ke linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            }
+            case 2: { // Pilihan menu 2 untuk menambahkan data mahasiswa di belakang linked list
+                string nama;
+                int umur;
+                cout << "Masukkan Nama: ";
+                cin >> nama;
+                cout << "Masukkan Umur: ";
+                cin >> umur;
+                tambah_belakang_2123(nama, umur); // Memanggil fungsi tambah_belakang_2123 untuk menambahkan data mahasiswa ke linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            }
+            case 3: { // Pilihan menu 3 untuk menambahkan data mahasiswa di tengah linked list
+                string nama;
+                int umur, posisi;
+                cout << "Masukkan Nama: ";
+                cin >> nama;
+                cout << "Masukkan Umur: ";
+                cin >> umur;
+                cout << "Masukkan Posisi: ";
+                cin >> posisi;
+                tambah_tengah_2123(nama, umur, posisi); // Memanggil fungsi tambah_tengah_2123 untuk menambahkan data mahasiswa ke linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            }
+            case 4: // Pilihan menu 4 untuk menghapus data mahasiswa di depan linked list
+                hapus_depan_2123(); // Memanggil fungsi hapus_depan_2123 untuk menghapus data mahasiswa di depan linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            case 5: // Pilihan menu 5 untuk menghapus data mahasiswa di belakang linked list
+                hapus_belakang_2123(); // Memanggil fungsi hapus_belakang_2123 untuk menghapus data mahasiswa di belakang linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            case 6: { // Pilihan menu 6 untuk menghapus data mahasiswa di tengah linked list
+                int posisi;
+                cout << "Masukkan Posisi: ";
+                cin >> posisi;
+                hapus_tengah_2123(posisi); // Memanggil fungsi hapus_tengah_2123 untuk menghapus data mahasiswa di tengah linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            }
+            case 7: { // Pilihan menu 7 untuk mengubah data mahasiswa di depan linked list
+                string nama;
+                int umur;
+                cout << "Masukkan Nama Baru: ";
+                cin >> nama;
+                cout << "Masukkan Umur Baru: ";
+                cin >> umur;
+                ubah_depan_2123(nama, umur); // Memanggil fungsi ubah_depan_2123 untuk mengubah data mahasiswa di depan linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            }
+            case 8: { // Pilihan menu 8 untuk mengubah data mahasiswa di belakang linked list
+                string nama;
+                int umur;
+                cout << "Masukkan Nama Baru: ";
+                cin >> nama;
+                cout << "Masukkan Umur Baru: ";
+                cin >> umur;
+                ubah_belakang_2123(nama, umur); // Memanggil fungsi ubah_belakang_2123 untuk mengubah data mahasiswa di belakang linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            }
+            case 9: { // Pilihan menu 9 untuk mengubah data mahasiswa di tengah linked list
+                string nama;
+                int umur, posisi;
+                cout << "Masukkan Nama Baru: ";
+                cin >> nama;
+                cout << "Masukkan Umur Baru: ";
+                cin >> umur;
+                cout << "Masukkan Posisi: ";
+                cin >> posisi;
+                ubah_tengah_2123(nama, umur, posisi); // Memanggil fungsi ubah_tengah_2123 untuk mengubah data mahasiswa di tengah linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display();
+                break;
+            }
+            case 10: // Pilihan menu 10 untuk menampilkan data mahasiswa yang ada di linked list
+                cout << "\nData Mahasiswa Terbaru:" << endl;
+                display(); // Memanggil fungsi display untuk menampilkan data mahasiswa yang ada di linked list
+                break;
+            case 0: // Pilihan menu 0 untuk keluar dari program
+                cout << "Terima kasih!" << endl;
+                break;
+            default: // Pilihan default jika pilihan menu yang diinputkan oleh user tidak valid
+                cout << "Input pilihan tidak valid!" << endl;
+        }
+    } while (pilihan != 0); // Perulangan akan terus berjalan selama pilihan menu yang diinputkan oleh user bukan 0
 
     return 0;
 }
+
+/* Program ini merupakan program yang digunakan untuk mengelola data mahasiswa menggunakan linked list. 
+Program ini memiliki beberapa menu pilihan yang dapat dilakukan oleh user, yaitu: menambahkan data mahasiswa di depan, belakang, 
+dan tengah linked list, menghapus data mahasiswa di depan, belakang, dan tengah linked list, mengubah data mahasiswa di depan, belakang, 
+dan tengah linked list, serta menampilkan data mahasiswa yang ada di linked list. Program ini akan terus berjalan hingga user memilih menu keluar.
+Program ini menggunakan linked list untuk menyimpan data mahasiswa yang berisi nama dan umur. Program ini juga memiliki  fungsi-fungsi yang 
+digunakan yaitu inisialisasi_2123, apakah_kosong_2123, tambah_depan_2123, tambah_belakang_2123, tambah_tengah_2123, hapus_depan_2123, 
+hapus_belakang_2123, hapus_tengah_2123, ubah_depan_2123, ubah_belakang_2123, ubah_tengah_2123, dan display. Semua penjelasan fungsi-fungsi sudah 
+ada di kalimat sebelumnya. Program ini juga menggunakan perulangan do while untuk menampilkan menu pilihan yang dapat dilakukan oleh user.
+*/
