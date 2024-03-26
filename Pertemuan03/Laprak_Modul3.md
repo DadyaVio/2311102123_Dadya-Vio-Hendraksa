@@ -32,7 +32,7 @@ simpul yaitu pointer prev yang menunjuk ke simpul sebelumnya. Dengan adanya poin
 • Setiap node membutuhkan pointer tambahan, membutuhkan lebih banyak ruang.<br/>
 • Penyisipan atau penghapusan node membutuhkan waktu sedikit lebih lama (lebih 
 banyak operasi pointer)</br>
-![Gambar Dasar Teori Part 1](Dasar-Teori_Double-Linked-List.png)
+![Gambar Dasar Teori Part 2](Dasar-Teori_Double-Linked-List.png)
 
 ## Guided 
 
