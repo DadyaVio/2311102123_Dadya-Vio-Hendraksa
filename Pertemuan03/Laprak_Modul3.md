@@ -23,6 +23,7 @@ Umumnya "daftar tertaut" berarti daftar tertaut tunggal. Daftar ini terdiri dari
 • Melintasi daftar<br/>
 • Memasukkan item ke dalam daftar<br/>
 • Menghapus item dari daftar<br/>
+![Gambar Dasar Teori Part 1](Dasar Teori_Single Linked List.png)</br>
 Masing-masing komponen sering disebut dengan simpul atau node atau verteks. Pointer adalah alamat elemen. Setiap simpul pada dasarnya dibagi atas dua bagian pertama disebut bagian isi atau informasi atau data yang berisi nilai yang disimpan oleh simpul. Bagian kedua disebut bagian pointer yang berisi alamat dari node berikutnya atau sebelumnya. Dengan menggunakan struktur seperti ini, linked list dibentuk dengan cara menunjuk pointer next suatu elemen ke elemen yang mengikutinya. Pointer next pada elemen terakhir merupakan NULL, yang menunjukkan akhir dari suatu list. Elemen pada awal suatu list disebut head dan elemen terakhir dari suatu list disebut tail.
 
 2. Double Linked List<br/>
@@ -30,7 +31,8 @@ Double Linked List adalah struktur data Linked List yang mirip dengan Single Lin
 simpul yaitu pointer prev yang menunjuk ke simpul sebelumnya. Dengan adanya pointer prev, Double Linked List memungkinkan untuk melakukan operasi penghapusan dan penambahan pada simpul mana saja secara efisien. Setiap simpul pada Double Linked List memiliki tiga elemen penting, yaitu elemen data (biasanya berupa nilai), pointer next yang menunjuk ke simpul berikutnya, dan pointer prev yang menunjuk ke simpul sebelumnya. Keuntungan dari daftar tertaut ganda (juga disebut daftar tertaut dua arah) adalah bahwa dengan adanya simpul dalam daftar, kita dapat menavigasi ke dua arah. Sebuah node dalam daftar tertaut tunggal tidak dapat dihapus kecuali kita memiliki penunjuk ke pendahulunya. Tetapi dalam daftar tertaut ganda, kita dapat menghapus sebuah node bahkan jika kita tidak memiliki alamat node sebelumnya (karena setiap node memiliki pointer kiri yang menunjuk ke node sebelumnya dan dapat bergerak mundur).Kerugian utama dari daftar tertaut ganda adalah:<br/>
 • Setiap node membutuhkan pointer tambahan, membutuhkan lebih banyak ruang.<br/>
 • Penyisipan atau penghapusan node membutuhkan waktu sedikit lebih lama (lebih 
-banyak operasi pointer)
+banyak operasi pointer)</br>
+![Gambar Dasar Teori Part 1](Dasar Teori_Double Linked List.png)
 
 ## Guided 
 
