@@ -407,13 +407,12 @@ int main() {
 }
 ```
 Program yang disediakan merupakan sebuah aplikasi yang mengimplementasikan Doubly Linked List. Doubly Linked List adalah struktur data yang memungkinkan penyimpanan data secara terurut dengan kemampuan untuk menambah, menghapus, dan mengubah data. Pemprograman ini menggunakan sebuah class bernama DoublyLinkedList yang menyediakan beberapa method, antara lain:</br>
-push: Method ini digunakan untuk menambahkan data ke dalam list.</br>
-pop: Method ini digunakan untuk menghapus data dari list.</br>
-update: Method ini digunakan untuk mengubah data yang sudah ada di dalam list.</br>
-deleteAll: Method ini digunakan untuk menghapus semua data yang ada di dalam list.</br>
-display: Method ini digunakan untuk menampilkan data yang ada di dalam list.</br>
-Program menggunakan struktur kontrol switch-case untuk memungkinkan pengguna memilih operasi yang diinginkan, seperti menambahkan, menghapus, mengubah, atau menampilkan data. Program akan terus berjalan hingga pengguna memilih untuk keluar (exit).</br>
-Dengan implementasi Doubly Linked List, program ini memberikan kemudahan dalam mengelola data dengan fleksibilitas tambahan karena setiap node dalam list memiliki pointer yang menunjuk baik ke node sebelumnya maupun node berikutnya.
+- push: Method ini digunakan untuk menambahkan data ke dalam list.</br>
+- pop: Method ini digunakan untuk menghapus data dari list.</br>
+- update: Method ini digunakan untuk mengubah data yang sudah ada di dalam list.</br>
+- deleteAll: Method ini digunakan untuk menghapus semua data yang ada di dalam list.</br>
+- display: Method ini digunakan untuk menampilkan data yang ada di dalam list.</br>
+Program menggunakan struktur kontrol switch-case untuk memungkinkan pengguna memilih operasi yang diinginkan, seperti menambahkan, menghapus, mengubah, atau menampilkan data. Program akan terus berjalan hingga pengguna memilih untuk keluar (exit). Dengan implementasi Doubly Linked List, program ini memberikan kemudahan dalam mengelola data dengan fleksibilitas tambahan karena setiap node dalam list memiliki pointer yang menunjuk baik ke node sebelumnya maupun node berikutnya.
 
 ## Unguided 
 
