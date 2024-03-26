@@ -23,7 +23,7 @@ Umumnya "daftar tertaut" berarti daftar tertaut tunggal. Daftar ini terdiri dari
 • Melintasi daftar<br/>
 • Memasukkan item ke dalam daftar<br/>
 • Menghapus item dari daftar<br/>
-![Gambar Dasar Teori Part 1](Dasar Teori_Single Linked List.png)</br>
+![Gambar Dasar Teori Part 1](Dasar-Teori_Single-Linked-List.png)</br>
 Masing-masing komponen sering disebut dengan simpul atau node atau verteks. Pointer adalah alamat elemen. Setiap simpul pada dasarnya dibagi atas dua bagian pertama disebut bagian isi atau informasi atau data yang berisi nilai yang disimpan oleh simpul. Bagian kedua disebut bagian pointer yang berisi alamat dari node berikutnya atau sebelumnya. Dengan menggunakan struktur seperti ini, linked list dibentuk dengan cara menunjuk pointer next suatu elemen ke elemen yang mengikutinya. Pointer next pada elemen terakhir merupakan NULL, yang menunjukkan akhir dari suatu list. Elemen pada awal suatu list disebut head dan elemen terakhir dari suatu list disebut tail.
 
 2. Double Linked List<br/>
@@ -32,7 +32,7 @@ simpul yaitu pointer prev yang menunjuk ke simpul sebelumnya. Dengan adanya poin
 • Setiap node membutuhkan pointer tambahan, membutuhkan lebih banyak ruang.<br/>
 • Penyisipan atau penghapusan node membutuhkan waktu sedikit lebih lama (lebih 
 banyak operasi pointer)</br>
-![Gambar Dasar Teori Part 1](Dasar Teori_Double Linked List.png)
+![Gambar Dasar Teori Part 1](Dasar-Teori_Double-Linked-List.png)
 
 ## Guided 
 
