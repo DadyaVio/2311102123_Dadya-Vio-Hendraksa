@@ -186,7 +186,7 @@ void display() { // Menampilkan data mahasiswa yang ada di linked list
     }
 
     Node* current = head;
-    cout << left << setw(10) << "|Nama|" << right << setw(5) << " |Umur|" << endl; // Menampilkan header tabel data mahasiswa 
+    cout << left << setw(10) << "|Nama|" << right << setw(5) << " |NIM|" << endl; // Menampilkan header tabel data mahasiswa 
     while (current != nullptr) {
         cout << left << setw(10) << current->Nama_2123 << right << setw(5) << current->NIM_2123 << endl; // Menampilkan data mahasiswa dan merapikan tampilan data mahasiswa
         current = current->next;
