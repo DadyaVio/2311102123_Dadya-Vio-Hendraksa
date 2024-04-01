@@ -335,13 +335,3 @@ int main() { // Fungsi utama yang akan dieksekusi pertama kali saat program dija
 
     return 0;
 }
-
-/* Program ini merupakan program yang digunakan untuk mengelola data mahasiswa menggunakan linked list. 
-Program ini memiliki beberapa menu pilihan yang dapat dilakukan oleh user, yaitu: menambahkan data mahasiswa di depan, belakang, 
-dan tengah linked list, menghapus data mahasiswa di depan, belakang, dan tengah linked list, mengubah data mahasiswa di depan, belakang, 
-dan tengah linked list, serta menampilkan data mahasiswa yang ada di linked list. Program ini akan terus berjalan hingga user memilih menu keluar.
-Program ini menggunakan linked list untuk menyimpan data mahasiswa yang berisi nama dan umur. Program ini juga memiliki  fungsi-fungsi yang 
-digunakan yaitu inisialisasi_2123, apakah_kosong_2123, tambah_depan_2123, tambah_belakang_2123, tambah_tengah_2123, hapus_depan_2123, 
-hapus_belakang_2123, hapus_tengah_2123, ubah_depan_2123, ubah_belakang_2123, ubah_tengah_2123, dan display. Semua penjelasan fungsi-fungsi sudah 
-ada di kalimat sebelumnya. Program ini juga menggunakan perulangan do while untuk menampilkan menu pilihan yang dapat dilakukan oleh user.
-*/
