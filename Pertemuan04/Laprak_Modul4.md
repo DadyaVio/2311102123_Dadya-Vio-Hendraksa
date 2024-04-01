@@ -866,6 +866,7 @@ int main() { // Fungsi utama yang akan dieksekusi pertama kali saat program dija
 }
 ```
 #### Output:
+1. Menu untuk menambahkan, mengubah, menghapus, dan melihat Nama dan NIM mahasiswa.</br>
 • Tampilan Menu:</br>
 ![Screenshot Output Unguided 1 Part 1](Output_Unguided-01_Part-1_Dadya-Vio-H.png)</br>
 • Tampilan Operasi Tambah:</br>
@@ -880,6 +881,8 @@ int main() { // Fungsi utama yang akan dieksekusi pertama kali saat program dija
 ![Screenshot Output Unguided 1 Part 8](Output_Unguided-01_Part-8_Dadya-Vio-H.png)</br>
 ![Screenshot Output Unguided 1 Part 9](Output_Unguided-01_Part-9_Dadya-Vio-H.png)</br>
 ![Screenshot Output Unguided 1 Part 10](Output_Unguided-01_Part-10_Dadya-Vio-H.png)</br>
+• Tampilan Operasi Tampilkan Data:</br>
+![Screenshot Output Unguided 1 Part 11](Output_Unguided-01_Part-11_Dadya-Vio-H.png)</br>
 Program ini merupakan program linked list non circular yang digunakan untuk menyimpan data mahasiswa berupa nama dan NIM. Program ini memiliki beberapa fungsi yaitu: void inisialisasi_2123(), bool apakah_kosong_2123(), void tambah_depan_2123(string Nama, long long NIM), void tambah_belakang_2123(string Nama, long long NIM), void tambah_tengah_2123(string Nama, long long NIM, int Posisi), void hapus_depan_2123(), void hapus_belakang_2123(), void hapus_tengah_2123(int Posisi), void ubah_depan_2123(string Nama, long long NIM), void ubah_belakang_2123(string Nama, long long NIM), void ubah_tengah_2123(string Nama, long long NIM, int Posisi), void display(). Untuk deklarasi struct node menggunakan tipe data string untuk Nama dan long long untuk NIM. Supaya NIM dapat menampung angka yang panjang. Kemudian program ini memiliki menu pilihan yang dapat dilakukan oleh user yaitu:</br>
 1. Tambah Data di Depan</br>
 2. Tambah Data di Belakang</br>
