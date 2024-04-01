@@ -196,7 +196,7 @@ void display() { // Menampilkan data mahasiswa yang ada di linked list
 int main() { // Fungsi utama yang akan dieksekusi pertama kali saat program dijalankan
     inisialisasi_2123(); // Memanggil fungsi inisialisasi_2123 untuk menginisialisasi linked list dengan head dan tail bernilai nullptr
 
-    cout << "\n||||||-------Program data link list by Dadya Vio Hendraksa_2123-------||||||" << endl;
+    cout << "\n||||||-------Program data linked list non circular by Dadya Vio Hendraksa_2123-------||||||" << endl;
     
     int pilihan; // Deklarasi variabel pilihan untuk menyimpan pilihan menu yang diinputkan oleh user
     do { // Perulangan untuk menampilkan menu pilihan yang dapat dilakukan oleh user

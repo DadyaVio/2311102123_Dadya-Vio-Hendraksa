@@ -271,7 +271,22 @@ int main() {
   return 0;
 }
 ```
-Pemprograman ini 
+Program ini merupakan implementasi dari single linked list non-circular yang digunakan untuk melakukan operasi penambahan, penghapusan, pengubahan, dan penampilan data pada list. Struktur data ini menggunakan struct Node yang memiliki atribut data dan pointer next untuk menunjukkan elemen selanjutnya dalam list. Program ini menyediakan sejumlah fungsi untuk berbagai operasi, antara lain:</br>
+• void init(): untuk menginisialisasi head dan tail.</br>
+• bool isEmpty(): untuk mengecek apakah list kosong atau tidak.</br>
+• void insertDepan(int nilai): untuk menambahkan data di depan list.</br>
+• void insertBelakang(int nilai): untuk menambahkan data di belakang list.</br>
+• int hitungList(): untuk menghitung jumlah elemen dalam list.</br>
+• void insertTengah(int data, int posisi): untuk menambahkan data di tengah list.</br>
+• void hapusDepan(): untuk menghapus data di depan list.</br>
+• void hapusBelakang(): untuk menghapus data di belakang list.</br>
+• void hapusTengah(int posisi): untuk menghapus data di tengah list.</br>
+• void ubahDepan(int data): untuk mengubah data di depan list.</br>
+• void ubahTengah(int data, int posisi): untuk mengubah data di tengah list.</br>
+• void ubahBelakang(int data): untuk mengubah data di belakang list.</br>
+• void clearList(): untuk menghapus seluruh elemen dalam list.</br>
+• void tampil(): untuk menampilkan seluruh isi list.</br>
+Fungsi-fungsi tersebut dapat digunakan pada fungsi main(), yang memungkinkan pengguna untuk melakukan berbagai operasi pada list seperti menambah, menghapus, mengubah, dan menampilkan data. Setelah melakukan operasi yang diinginkan, program akan menampilkan seluruh isi list dengan memanggil fungsi tampil(). Dengan demikian, tidak ada hubungan langsung antara head dan tail, tidak ada pengulangan, dan tidak ada pengecekan apakah sudah mencapai tail atau belum.
 
 ### 2. Program Latihan Linked List Circular
 
@@ -476,7 +491,20 @@ int main() {
   return 0;
 }
 ```
-Program yang 
+Program ini merupakan implementasi dari single linked list circular yang digunakan untuk melakukan operasi penambahan, penghapusan, dan pengubahan data pada linked list. Program ini memiliki fungsi-fungsi sebagai berikut:</br>
+• void init(): untuk menginisialisasi head dan tail.</br>
+• int isEmpty(): untuk mengecek apakah linked list kosong atau tidak.</br>
+• void buatNode(string data): untuk membuat node baru.</br>
+• int hitungList(): untuk menghitung jumlah node pada linked list.</br>
+• void insertDepan(string data): untuk menambahkan node di depan.</br>
+• void insertBelakang(string data): untuk menambahkan node di belakang.</br>
+• void insertTengah(string data, int posisi): untuk menambahkan node di tengah.</br>
+• void hapusDepan(): untuk menghapus node di depan.</br>
+• void hapusBelakang(): untuk menghapus node di belakang.</br>
+• void hapusTengah(int posisi): untuk menghapus node di tengah.</br>
+• void clearList(): untuk menghapus seluruh node pada linked list.</br>
+• void tampil(): untuk menampilkan seluruh node pada linked list.</br>
+Perbedaan utama antara program ini dengan program linked list non-circular adalah bahwa pada program ini, tail menunjuk ke head, sehingga linked list membentuk lingkaran. Ketika node terakhir menunjuk ke head, maka head akan menunjuk ke node pertama. Sehingga, ketika menambahkan node di belakang, node baru akan menjadi node terakhir dan menunjuk ke head. Begitu juga ketika menghapus node di belakang, node terakhir akan dihapus dan node sebelumnya akan menjadi node terakhir dan menunjuk ke head.
 
 ## Unguided 
 
@@ -838,15 +866,37 @@ int main() { // Fungsi utama yang akan dieksekusi pertama kali saat program dija
 }
 ```
 #### Output:
+• Tampilan Menu:</br>
 ![Screenshot Output Unguided 1 Part 1](Output_Unguided-01_Part-1_Dadya-Vio-H.png)</br>
+• Tampilan Operasi Tambah:</br>
 ![Screenshot Output Unguided 1 Part 2](Output_Unguided-01_Part-2_Dadya-Vio-H.png)</br>
 ![Screenshot Output Unguided 1 Part 3](Output_Unguided-01_Part-3_Dadya-Vio-H.png)</br>
 ![Screenshot Output Unguided 1 Part 4](Output_Unguided-01_Part-4_Dadya-Vio-H.png)</br>
+• Tampilan Operasi Hapus:</br>
 ![Screenshot Output Unguided 1 Part 5](Output_Unguided-01_Part-5_Dadya-Vio-H.png)</br>
-Program ini 
+![Screenshot Output Unguided 1 Part 6](Output_Unguided-01_Part-6_Dadya-Vio-H.png)</br>
+![Screenshot Output Unguided 1 Part 7](Output_Unguided-01_Part-7_Dadya-Vio-H.png)</br>
+• Tampilan Operasi Ubah:</br>
+![Screenshot Output Unguided 1 Part 8](Output_Unguided-01_Part-8_Dadya-Vio-H.png)</br>
+![Screenshot Output Unguided 1 Part 9](Output_Unguided-01_Part-9_Dadya-Vio-H.png)</br>
+![Screenshot Output Unguided 1 Part 10](Output_Unguided-01_Part-10_Dadya-Vio-H.png)</br>
+Program ini merupakan program linked list non circular yang digunakan untuk menyimpan data mahasiswa berupa nama dan NIM. Program ini memiliki beberapa fungsi yaitu: void inisialisasi_2123(), bool apakah_kosong_2123(), void tambah_depan_2123(string Nama, long long NIM), void tambah_belakang_2123(string Nama, long long NIM), void tambah_tengah_2123(string Nama, long long NIM, int Posisi), void hapus_depan_2123(), void hapus_belakang_2123(), void hapus_tengah_2123(int Posisi), void ubah_depan_2123(string Nama, long long NIM), void ubah_belakang_2123(string Nama, long long NIM), void ubah_tengah_2123(string Nama, long long NIM, int Posisi), void display(). Untuk deklarasi struct node menggunakan tipe data string untuk Nama dan long long untuk NIM. Supaya NIM dapat menampung angka yang panjang. Kemudian program ini memiliki menu pilihan yang dapat dilakukan oleh user yaitu:</br>
+1. Tambah Data di Depan</br>
+2. Tambah Data di Belakang</br>
+3. Tambah Data di Tengah</br>
+4. Hapus Data di Depan</br>
+5. Hapus Data di Belakang</br>
+6. Hapus Data di Tengah</br>
+7. Ubah Data di Depan</br>
+8. Ubah Data di Belakang</br>
+9. Ubah Data di Tengah</br>
+10. Menampilkan Data</br>
+0. Keluar</br>
+Program ini akan terus berjalan selama user belum memilih menu pilihan 0. Jika user memilih antara menu tersebut maka akan memanggil fungsi yang sesuai dengan pilihan menu yang diinputkan oleh user. Setelah itu program akan menampilkan data mahasiswa yang ada di linked list. Program ini akan berhenti jika user memilih menu pilihan 0. Jadi program ini akan terus berjalan selama user belum memilih menu pilihan 0.
 
 ## Kesimpulan
 Kesimpulannya setelah mempelajari linked list, diketahui bahwa struktur data ini menawarkan fleksibilitas dalam manajemen data secara dinamis. Konsep dasar linked list yang terdiri dari node-node yang saling terhubung membuatnya sangat cocok untuk situasi di mana perlu menambah atau menghapus data dengan cepat tanpa memerlukan realokasi memori besar. Keuntungan utamanya terletak pada efisiensi operasi penyisipan dan penghapusan di awal atau akhir linked list dengan kompleksitas waktu konstan. Namun, kita juga perlu mempertimbangkan kelemahan linked list seperti penggunaan memori tambahan untuk menyimpan pointer dan keterbatasan dalam akses langsung ke elemen-elemen data, yang dapat mempengaruhi kinerja terutama dalam aplikasi dengan jumlah data besar. Dengan memperhitungkan karakteristik dan kompleksitas operasi linked list, kita dapat membuat keputusan yang tepat dalam pemilihan struktur data yang paling sesuai dengan kebutuhan kita.
+
 ## Referensi
 [1] Shofyann Hanief,et al., Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Yogyakarta: Andi Publisher, 2020. <br/>
 [2] Joseph Teguh Santoso., STRUKTUR DATA dan ALGORITMA (Bagian 1). Semarang: Yayasan Prima Agus Teknik, 2021.</br>
