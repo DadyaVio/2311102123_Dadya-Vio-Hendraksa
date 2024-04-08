@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 using namespace std;
+
 const int TABLE_SIZE = 11;
 string name;
 string phone_number;

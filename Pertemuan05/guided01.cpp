@@ -1,5 +1,7 @@
 #include <iostream>
+
 using namespace std;
+
 const int MAX_SIZE = 10;
 // Fungsi hash sederhana
 int hash_func(int key) { return key % MAX_SIZE; }
