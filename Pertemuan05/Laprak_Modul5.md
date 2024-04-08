@@ -4,12 +4,27 @@
 ## Dasar Teori
 
 1. Pengertian Hash Table<br/>
-Linked list non-circular adalah susunan node yang terkait satu sama lain dalam susunan garis lurus, setiap node menyimpan data dan pointer ke node berikutnya. Perbedaan utamanya adalah absennya koneksi kembali ke node awal, sehingga tidak ada loop tertutup. Ini berarti pencarian atau traversal harus dimulai dari awal hingga akhir untuk mengakses elemen. Fleksibilitas dalam menambah atau menghapus node menjadikan linked list non-circular ideal untuk situasi di mana manipulasi data dinamis diperlukan, seperti dalam implementasi antrian atau daftar kontak. Namun, metode traversal ini cenderung lebih lambat daripada struktur data lain seperti array karena membutuhkan pencarian linear.<br/>
-![Gambar Dasar Teori Part 1](Dasar-Teori_Linked-List-Non-Circular.png)</br>
+Hash Table adalah struktur data yang efisien digunakan untuk mengatur dan mengelola data dengan kecepatan tinggi. Prinsip dasarnya adalah kunci-nilai, di mana setiap data memiliki kunci yang unik untuk mengaksesnya. Fungsi hash digunakan untuk mengubah kunci menjadi indeks dalam array, memungkinkan akses data secara langsung dengan perhitungan indeks. Ini memungkinkan operasi seperti pencarian, penyisipan, penghapusan, dan pembaruan data dalam waktu konstan, kecuali jika terjadi konflik pada fungsi hash (collision). Hash Table sangat berguna untuk penyimpanan data yang efisien, pencarian data cepat berdasarkan kunci, dan implementasi struktur data lain seperti set dan map.<br/>
+![Gambar Dasar Teori Part 1](Dasar-Teori_Part-1_Hash-Table.png)</br>
 
 2. Fungsi, Kelebihan, Kekurangan Hash Table<br/>
-Dalam single linked list dan double linked list, akhir linked list ditunjukkan dengan nilai NULL. Tetapi linked list circular tidak memiliki akhir. Saat melintasi linked list circular, kita harus berhati-hati; jika tidak, kita akan melintasi list tanpa batas. Dalam linked list circular, setiap simpul memiliki penerus. Perhatikan bahwa tidak seperti daftar tertaut tunggal, tidak ada simpul dengan penunjuk NULL dalam linked list circular. Dalam beberapa situasi, linked list circular berguna. Misalnya, ketika beberapa proses menggunakan sumber daya komputer (CPU) yang sama untuk jumlah waktu yang sama, kita harus memastikan bahwa tidak ada proses yang mengakses sumber daya sebelum semua proses lain melakukannya (algoritma round robin). Linked list circular dapat digunakan untuk menyimpan data yang perlu diakses secara berulang, seperti daftar putar lagu, daftar pesan dalam antrian, atau penggunaan memori berulang dalam suatu aplikasi.</br>
-![Gambar Dasar Teori Part 2](Dasar-Teori_Linked-List-Circular.png)
+Hash Table adalah sebuah struktur data yang efisien digunakan untuk menyimpan dan mengelola data dengan cepat. Fungsi utamanya meliputi penyimpanan data dengan efisien, pencetakan seluruh elemen dalam hash table, dan penggunaan fungsi hash untuk menetapkan lokasi key dalam tabel. Ini sangat berguna dalam mengelola data dengan frekuensi operasi insert, delete, dan search yang tinggi, serta dalam mengimplementasikan struktur data lain seperti set dan map.<br/>
+Kelebihannya termasuk kemampuan hashing untuk melakukan operasi dengan waktu rata-rata konstan, memungkinkan penyimpanan data besar dalam hash table, pencarian data cepat berdasarkan key, dan efisiensi penyimpanan data.<br/>
+Terdapat juga kekurangan seperti kemungkinan collision saat beberapa kunci memetakan data ke integer yang sama, kesulitan dalam pencetakan seluruh elemen hash table, keterbatasan dalam mencari elemen minimum atau maksimum, serta keterbatasan dalam ekspansi hash table dan pemborosan memory yang mungkin terjadi.</br>
+
+3. Operasi Hash Table</br>
+Hash Table adalah struktur data yang menyediakan beberapa operasi utama untuk mengelola dan memanipulasi data di dalamnya. Berikut adalah operasi-operasi utama pada Hash Table beserta penjelasannya:</br>
+• Insert: Digunakan untuk menambahkan data baru ke dalam Hash Table. Ketika data ditambahkan, fungsi hash digunakan untuk menghitung kunci (key) data tersebut, yang kemudian digunakan untuk menentukan lokasi penyimpanan dalam Hash Table. Jika terjadi collision, seperti saat dua data memiliki kunci yang sama, teknik penanganan seperti chaining atau probing digunakan untuk menempatkan data baru di tempat yang sesuai.</br>
+• Get (Search): Berfungsi untuk mencari data berdasarkan kunci (key) yang diberikan. Fungsi hash digunakan kembali untuk menemukan lokasi yang mungkin dari data dalam Hash Table. Jika data ditemukan, nilainya dikembalikan; jika tidak, biasanya nilai null atau indikator lain yang menunjukkan bahwa data tidak ditemukan dikembalikan.</br>
+• Remove: Digunakan untuk menghapus data dari Hash Table berdasarkan kunci (key) yang diberikan. Sama seperti operasi pencarian, fungsi hash digunakan untuk menemukan lokasi data yang mungkin. Jika data ditemukan, maka data tersebut dihapus dari Hash Table. Pengelolaan collision juga perlu dipertimbangkan saat menghapus data.</br>
+• Traverse: Berfungsi untuk mencetak atau menampilkan seluruh elemen yang ada dalam Hash Table. Biasanya dilakukan dengan mengunjungi setiap slot dalam Hash Table dan mencetak data yang terdapat di dalamnya. Namun, perlu diingat bahwa pencetakan semua elemen dalam Hash Table dapat menjadi tugas yang sulit atau memakan waktu, terutama jika Hash Table memiliki ukuran yang besar.</br>
+Dengan menggunakan operasi-operasi tersebut, Hash Table mampu menyimpan, mencari, memperbarui, dan menghapus data dengan efisien. Akses ke data juga dapat dilakukan dengan waktu yang konstan, selama fungsi hash beroperasi secara optimal dan collision ditangani dengan baik.
+
+4. Collision Resolution </br>
+Collision Resolution adalah suatu teknik yang sangat penting dalam implementasi Hash Table. Dalam struktur data Hash Table, collision terjadi ketika dua atau lebih kunci data di-hash ke lokasi yang sama dalam tabel hash. Untuk menangani collision, terdapat dua pendekatan utama yang digunakan: Open Hashing (atau Chaining) dan Closed Hashing (atau Open Addressing).</br>
+Open Hashing, atau yang dikenal juga sebagai Chaining, melibatkan penggunaan struktur data tambahan seperti linked list untuk menangani kasus collision. Setiap slot dalam tabel hash menyimpan pointer ke linked list yang berisi semua data yang di-hash ke slot tersebut. Ketika terjadi collision, data baru disisipkan ke dalam linked list yang sesuai dengan slot hash-nya. Keuntungan dari Open Hashing adalah bahwa tidak ada pemborosan ruang karena data dengan kunci yang sama dapat disimpan bersama dalam satu slot hash. Namun, ada overhead tambahan yang timbul karena perlu mengelola struktur data tambahan untuk setiap slot hash.</br>
+Sementara itu, Closed Hashing, juga dikenal sebagai Open Addressing, mencoba untuk menyimpan semua data di dalam tabel hash tanpa menggunakan struktur data tambahan. Ketika terjadi collision, Closed Hashing mencari slot yang kosong di dalam tabel hash untuk menempatkan data yang bertabrakan. Ada beberapa teknik yang digunakan untuk menentukan slot yang kosong, seperti Linear Probing, Quadratic Probing, dan Double Hashing. Keuntungan dari Closed Hashing adalah penggunaan ruang yang lebih efisien karena tidak memerlukan struktur data tambahan. Namun, Closed Hashing dapat mengalami clustering, di mana slot kosong cenderung berdekatan, yang dapat menyebabkan kinerja menurun saat tabel hash menjadi lebih terisi.</br>
+![Gambar Dasar Teori Part 2](Dasar-Teori_Part-2_Hash-Table.jpeg)</br>
 
 ## Guided 
 
@@ -439,9 +454,14 @@ Program tersebut merupakan implementasi dari hash map dengan chaining yang digun
 Program tersebut juga menyediakan beberapa pilihan menu yang dapat digunakan oleh pengguna, seperti menambahkan data mahasiswa, menghapus data mahasiswa, mencari data mahasiswa berdasarkan NIM, mencari data mahasiswa berdasarkan rentang nilai, dan menampilkan seluruh data mahasiswa yang ada di dalam hash map.
 
 ## Kesimpulan
-Kesimpulannya tentang materi 
+Kesimpulannya tentang materi Hash table yaitu merupakan struktur data yang efisien digunakan untuk menyimpan dan mengakses data dengan cepat berdasarkan kunci (key) tertentu. Terdapat beberapa metode yang umumnya digunakan dalam hash table, salah satunya adalah metode chaining. Metode chaining memungkinkan beberapa data dengan kunci yang sama disimpan dalam satu slot hash table. Dalam implementasi hash table, terdapat beberapa fungsi dasar yang umumnya tersedia, antara lain:<br/>
+• Insert: Digunakan untuk memasukkan data ke dalam hash table.<br/>
+• Get: Digunakan untuk mencari data berdasarkan kunci (key).<br/>
+• Remove: Digunakan untuk menghapus data berdasarkan kunci.<br/>
+• Traverse: Digunakan untuk menampilkan semua data yang ada di dalam hash table.<br/>
+Penggunaan hash table sangat berguna dalam berbagai konteks, seperti penyimpanan data karyawan, mahasiswa, atau data lainnya yang memerlukan pengindeksan berdasarkan kunci tertentu. Dengan metode chaining, pengguna dapat dengan efisien menyimpan dan mengakses data yang berpotensi memiliki kunci yang sama. Kesimpulannya, hash table dengan metode chaining merupakan alat yang powerful dalam mengelola dan mengakses data dengan cepat berdasarkan kunci tertentu. Implementasinya dapat diadaptasi untuk berbagai kebutuhan, sehingga sangat berguna dalam pengembangan berbagai jenis aplikasi dan sistem.
 
 ## Referensi
-[1] Shofyann Hanief,et al., Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Yogyakarta: Andi Publisher, 2020. <br/>
-[2] Joseph Teguh Santoso., STRUKTUR DATA dan ALGORITMA (Bagian 1). Semarang: Yayasan Prima Agus Teknik, 2021.</br>
+[1] Jasson Prestiliano., Aplikasi Tabel Hash dalam Pengarsipan dan Pencarian Data. Salatiga: Universitas Kristen Satya Wacana, 2020.<br/>
+[2] Muhammad Nugraha, Dasar Pemrograman Dengan C++, Materi Paling Dasar untuk Menjadi Programmer Berbagai Platform. Yogyakarta: Deepublish, 2021.<br/>
 [3] Malik, D.S., C++ Programming. Boston: Course Technology, 2023.
