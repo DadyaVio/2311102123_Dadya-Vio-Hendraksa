@@ -5,7 +5,7 @@
 using namespace std;
 
 // Fungsi untuk membersihkan kata dari karakter non-alfabet dan mengubahnya menjadi huruf kecil
-string ubah_ke_huruf_kecil_2123(string str) { 
+string bersihkan_dan_ubah_ke_huruf_kecil_2123(string str) { 
     string cleanStr; 
     for (char &c : str) {
         if (isalpha(c)) { // Hanya menambahkan karakter alfabet ke string bersih 
@@ -40,14 +40,14 @@ bool Palindrom_2123(string str) { // Fungsi untuk mengecek apakah kata/kalimat t
 }
 
 int main() {
-    char lanjut;
+    char lanjutkan_2123;
     do {
         string input;
         cout << "\nMasukkan kata atau kalimat: ";
         getline(cin, input); // Mengambil inputan dari user berupa kata atau kalimat 
 
         // Membersihkan dan mengubah menjadi huruf kecil
-        string membersihkan_input_2123 = ubah_ke_huruf_kecil_2123(input);
+        string membersihkan_input_2123 = bersihkan_dan_ubah_ke_huruf_kecil_2123(input);
 
         if (Palindrom_2123(membersihkan_input_2123)) { // Memanggil fungsi Palindrom_2123 dengan parameter membersihkan_input_2123
             cout << "Kata atau kalimat tersebut adalah : Palindrom" << endl;
@@ -56,9 +56,9 @@ int main() {
         }
 
         cout << "Ingin memasukkan kata atau kalimat lain? (y/n): ";
-        cin >> lanjut;
+        cin >> lanjutkan_2123;
         cin.ignore(); // Membersihkan newline dari buffer
-    } while (lanjut == 'y' || lanjut == 'Y');
+    } while (lanjutkan_2123 == 'y' || lanjutkan_2123 == 'Y');
 
     return 0;
 }
