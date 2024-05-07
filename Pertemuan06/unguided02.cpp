@@ -73,3 +73,13 @@ int main() {
 
     return 0;
 }
+
+/* Program ini utamanya menggunakan struktur data stack untuk membalikkan kalimat yang diinputkan oleh user. dimana saya mengggunakan libary stack 
+untuk membuat stack yang berisi karakter-karakter dari kalimat yang diinputkan oleh user. kemudian saya menggunakan fungsi balikKalimat untuk membalikkan kalimat yang diinputkan oleh user.
+dan juga library algorithm untuk menghitung jumlah spasi pada kalimat yang diinputkan oleh user. Pemprograman ini memiliki tugas utama yaitu
+membalikkan kalimat yang diinputkan oleh user. Dimana menggunakan beberapa operasi/fungsi yaitu fungsi string bersikan_Dan_Kecilkan_Hurufnya_2123 
+untuk membersihkan dan mengubah huruf menjadi huruf kecil, fungsi string balik_Kalimat_2123 untuk membalikkan kalimat yang diinputkan oleh user,
+dan juga menggunakan fungsi count untuk menghitung jumlah spasi pada kalimat yang diinputkan oleh user. Sehingga pada fungsi main, program akan meminta user untuk memasukkan kalimat
+yang akan dibalikkan, kemudian program akan memanggil fungsi balikKalimat untuk membalikkan kalimat yang diinputkan oleh user.
+Maka kesimpulannya, program ini akan membalikkan kalimat yang diinputkan oleh user dengan menggunakan stack. dengan menggunakan beberapa operasi/fungsi yang telah dijelaskan diatas.
+*/
