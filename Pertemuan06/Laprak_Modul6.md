@@ -329,7 +329,9 @@ Sehingga pada fungsi main, program akan meminta user untuk memasukkan kalimat ya
 
 
 ## Kesimpulan
-Kesimpulannya tentang materi 
+Dari berbagai materi yang telah diuraikan, dapat disimpulkan bahwa stack adalah struktur data linier yang mematuhi prinsip Last In First Out (LIFO). Konsep ini sering diilustrasikan dengan analogi susunan piring yang ditumpuk, di mana elemen terakhir yang dimasukkan akan menjadi yang pertama dikeluarkan. Dalam pemrograman C++, stack dapat diimplementasikan menggunakan array atau linked list, dengan operasi utama seperti push untuk menambahkan elemen baru, pop untuk menghapus elemen teratas, dan peek untuk melihat nilai elemen teratas tanpa menghapusnya.</br>
+Selain itu, penggunaan stack dalam pemrograman sangat luas dan bervariasi, mulai dari evaluasi ekspresi matematika hingga manajemen memori dalam sistem komputer. Stack juga digunakan dalam berbagai algoritma seperti rekursi dan traversal pohon, serta dalam pemeriksaan keseimbangan tanda kurung. Namun, dalam penggunaannya, stack dapat menghadapi dua kondisi yang perlu dihindari, yaitu stack underflow dan stack overflow, yang terjadi ketika mencoba mengakses atau menghapus elemen dari stack yang kosong atau penuh, secara berturut-turut.</br>
+Penerapan stack dalam pemrograman juga dapat ditemui dalam berbagai program praktis, seperti yang dijelaskan dalam contoh implementasi dengan array untuk membalikkan kalimat atau mengecek palindrom. Dalam kedua kasus tersebut, stack digunakan untuk memanipulasi dan memproses data dengan efisien sesuai dengan karakteristik Last In First Out. Kesimpulannya, pemahaman dan penerapan konsep stack dalam pemrograman C++ sangat penting untuk mengoptimalkan manipulasi data dengan mempertahankan urutan operasi yang sesuai dengan kebutuhan aplikasi.
 
 ## Referensi
 [1] Malik, D.S., C++ Programming. Boston: Course Technology, 2023.<br/>
