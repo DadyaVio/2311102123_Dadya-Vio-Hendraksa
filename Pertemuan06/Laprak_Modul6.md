@@ -20,7 +20,6 @@ Stack, sebagai struktur data, memiliki beberapa ciri khas yang perlu diperhatika
 • Operasi penyisipan dan penghapusan terjadi di ujung atas tumpukan.<br/>
 • Kemungkinan terjadi stack overflow ketika ruang memori sudah penuh dan masih ada operasi penyisipan.<br/>
 • Kemungkinan terjadi stack underflow ketika struktur data kosong dan tetap dilakukan operasi penghapusan.<br/>
-
 Fungsi dan Kegunaan Stack:<br/>
 Selain karakteristiknya, stack memiliki peran penting dalam berbagai konteks:<br/>
 • Evaluasi dan konversi ekspresi aritmatika, sering digunakan dalam program kompiler.<br/>
@@ -31,15 +30,15 @@ Selain karakteristiknya, stack memiliki peran penting dalam berbagai konteks:<br
 
 3. Operasi Stack</br>
 Operasi pada stack melibatkan fungsi dasar yang penting untuk manipulasi struktur data ini. Berikut adalah beberapa operasi umum pada stack:<br/>
-Push: Menambahkan elemen ke tumpukan pada posisi teratas.<br/>
-Pop: Menghapus elemen dari posisi teratas tumpukan.<br/>
-Top: Mendapatkan nilai elemen teratas pada tumpukan tanpa menghapusnya.<br/>
-IsEmpty: Memeriksa apakah tumpukan kosong.<br/>
-IsFull: Memeriksa apakah tumpukan penuh (khususnya pada implementasi dengan kapasitas terbatas).<br/>
-Size: Mengembalikan jumlah elemen dalam tumpukan.<br/>
-Peek: Melihat nilai atau elemen pada posisi tertentu dalam tumpukan tanpa menghapusnya.<br/>
-Clear: Mengosongkan semua elemen dari tumpukan.<br/>
-Search: Mencari keberadaan elemen tertentu dalam tumpukan.<br/>
+• Push: Menambahkan elemen ke tumpukan pada posisi teratas.<br/>
+• Pop: Menghapus elemen dari posisi teratas tumpukan.<br/>
+• Top: Mendapatkan nilai elemen teratas pada tumpukan tanpa menghapusnya.<br/>
+• IsEmpty: Memeriksa apakah tumpukan kosong.<br/>
+• IsFull: Memeriksa apakah tumpukan penuh (khususnya pada implementasi dengan kapasitas terbatas).<br/>
+• Size: Mengembalikan jumlah elemen dalam tumpukan.<br/>
+• Peek: Melihat nilai atau elemen pada posisi tertentu dalam tumpukan tanpa menghapusnya.<br/>
+• Clear: Mengosongkan semua elemen dari tumpukan.<br/>
+• Search: Mencari keberadaan elemen tertentu dalam tumpukan.<br/>
 Operasi-operasi ini merupakan bagian penting dari manipulasi data dengan stack, memfasilitasi pengelolaan data sesuai dengan prinsip Last In First Out (LIFO).
 
 ## Guided 
