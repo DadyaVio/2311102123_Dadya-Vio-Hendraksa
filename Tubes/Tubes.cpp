@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// Struct untuk karyawan
+// Struct untuk karyawan yang berisi nama, jabatan, dan gaji
 struct Karyawan {
     string nama;
     string jabatan;
@@ -17,17 +17,17 @@ void Tampilkan_Daftar_Nama(string Jabatan, Karyawan Karyawan[], int Jumlah_Nama,
     cout << " Daftar nama " << Jabatan << endl;
     cout << "|==========================|" << endl;
     int count = 1;
-    for (int i = 0; i < Jumlah_Nama; i++) {
-        if (Karyawan[i].jabatan == Jabatan) {
+    for (int i = 0; i < Jumlah_Nama; i++) { // Looping untuk menampilkan nama karyawan berdasarkan jabatan yang dipilih
+        if (Karyawan[i].jabatan == Jabatan) { // Jika jabatan karyawan sama dengan jabatan yang dipilih
             cout << "      " << count << ". " << Karyawan[i].nama << endl;
             indeks[indeks_count++] = i; // Simpan indeks karyawan
-            count++;
+            count++; 
         }
     }
     cout << "|==========================|" << endl;
 }
 
-// Fungsi hitung gaji hari masuk
+// Fungsi hitung gaji hari masuk karyawan
 int Hitung_Gaji(string Jabatan, int Hari_Masuk) {
     int Gaji = 0;
 
@@ -46,12 +46,12 @@ int Hitung_Gaji(string Jabatan, int Hari_Masuk) {
     return Gaji;
 }
 
-// Fungsi hitung gaji performa
+// Fungsi hitung gaji performa karyawan
 int Hitung_Gaji_Perfomance(string Jabatan, int Hari_Masuk, int Performa) {
     int Gaji = Hitung_Gaji(Jabatan, Hari_Masuk);
 
     if (Performa >= 90) {
-        Gaji += Gaji * 0.2;  // 20% bonus performa
+        Gaji += Gaji * 0.2;  // 20% bonus performa 
     } else if (Performa >= 70) {
         Gaji += Gaji * 0.1;  // 10% bonus performa
     }
@@ -59,7 +59,7 @@ int Hitung_Gaji_Perfomance(string Jabatan, int Hari_Masuk, int Performa) {
     return Gaji;
 }
 
-// Fungsi hitung gaji overtime
+// Fungsi hitung gaji overtime karyawan
 int Hitung_Gaji_Overtime(string Jabatan, int Hari_Masuk, int Jam_Overtime) {
     int Gaji = Hitung_Gaji(Jabatan, Hari_Masuk);
 
@@ -76,29 +76,29 @@ int Hitung_Gaji_Overtime(string Jabatan, int Hari_Masuk, int Jam_Overtime) {
         cout << "Jabatan tidak tersedia." << endl;
     }
 
-    Gaji += Jam_Overtime * Gaji_Per_Jam_Overtime;
+    Gaji += Jam_Overtime * Gaji_Per_Jam_Overtime; // Hitung gaji overtime dengan mengalikan gaji per jam overtime dengan jam overtime
 
-    return Gaji;
+    return Gaji; 
 }
 
-// Fungsi untuk mencari karyawan berdasarkan nama
+// Fungsi untuk mencari karyawan berdasarkan nama dan menampilkan jabatan dan gaji karyawan
 int Cari_Karyawan_Berdasarkan_Nama(string nama, Karyawan karyawan[], int jumlah_karyawan) {
-    for (int i = 0; i < jumlah_karyawan; i++) {
+    for (int i = 0; i < jumlah_karyawan; i++) { // Looping untuk mencari karyawan berdasarkan nama yang diinput
         if (karyawan[i].nama == nama) {
-            cout << "Karyawan " << nama << " ditemukan dengan jabatan " << karyawan[i].jabatan << endl;
-            cout << "Gaji: Rp " << (karyawan[i].gaji == -1 ? 0 : karyawan[i].gaji) << endl;
+            cout << "Karyawan " << nama << " ditemukan dengan jabatan " << karyawan[i].jabatan << endl; // Menampilkan jabatan karyawan
+            cout << "Gaji: Rp " << (karyawan[i].gaji == -1 ? 0 : karyawan[i].gaji) << endl; // Jika gaji karyawan belum dihitung, maka gaji karyawan adalah 0
             return karyawan[i].gaji;
         }
     }
     cout << "Karyawan dengan nama " << nama << " tidak ditemukan." << endl;
-    return -1;
+    return -1; // Jika karyawan tidak ditemukan, maka return -1 
 }
 
-// Fungsi untuk menghapus karyawan berdasarkan nama
+// Fungsi untuk menghapus karyawan berdasarkan nama dan mengurangi jumlah karyawan
 bool Hapus_Karyawan(string nama, Karyawan karyawan[], int &jumlah_karyawan) {
-    for (int i = 0; i < jumlah_karyawan; i++) {
-        if (karyawan[i].nama == nama) {
-            for (int j = i; j < jumlah_karyawan - 1; j++) {
+    for (int i = 0; i < jumlah_karyawan; i++) { // Looping untuk mencari karyawan berdasarkan nama yang diinput
+        if (karyawan[i].nama == nama) { // Jika karyawan ditemukan berdasarkan nama yang diinput 
+            for (int j = i; j < jumlah_karyawan - 1; j++) { // Looping untuk menggeser karyawan yang akan dihapus ke belakang
                 karyawan[j] = karyawan[j + 1];
             }
             jumlah_karyawan--;
@@ -111,17 +111,17 @@ bool Hapus_Karyawan(string nama, Karyawan karyawan[], int &jumlah_karyawan) {
 }
 
 int main() {
-    const int jumlah_jabatan = 4;
-    string Jabatan[jumlah_jabatan] = {"CEO", "Direktur", "Manajer", "Pekerja/Buruh"};
-    Karyawan karyawan[100];
-    int jumlah_karyawan = 0;
+    const int jumlah_jabatan = 4; // Jumlah jabatan yang tersedia 
+    string Jabatan[jumlah_jabatan] = {"CEO", "Direktur", "Manajer", "Pekerja/Buruh"}; // Array untuk menyimpan jabatan yang tersedia 
+    Karyawan karyawan[100]; // Array untuk menyimpan data karyawan dengan maksimal 100 karyawan
+    int jumlah_karyawan = 0; // Jumlah karyawan yang sudah diinput
 
-    for (int i = 0; i < jumlah_jabatan; i++) {
+    for (int i = 0; i < jumlah_jabatan; i++) { // Looping untuk input nama karyawan berdasarkan jabatan yang tersedia
         int jumlah_nama;
-        cout << " Masukkan jumlah nama dari " << Jabatan[i] << ": ";
+        cout << " Masukkan jumlah nama dari " << Jabatan[i] << ": "; 
         cin >> jumlah_nama;
 
-        for (int j = 0; j < jumlah_nama; j++) {
+        for (int j = 0; j < jumlah_nama; j++) { // Looping untuk input nama karyawan berdasarkan jumlah nama yang diinput 
             cout << " Nama " << j + 1 << ": ";
             cin >> karyawan[jumlah_karyawan].nama;
             karyawan[jumlah_karyawan].jabatan = Jabatan[i];
@@ -130,8 +130,8 @@ int main() {
         }
     }
 
-    char Lanjutkan;
-    do {
+    char Lanjutkan; // Variabel untuk menentukan apakah user ingin kembali ke menu utama
+    do { // Looping untuk menampilkan menu utama program
         cout << endl;
         cout << "|==========================|" << endl;
         cout << "|==Menu Program Karyawan===|" << endl;
@@ -150,12 +150,12 @@ int main() {
             }
         } while (Pilihan_Menu < 1 || Pilihan_Menu > 3);
 
-        if (Pilihan_Menu == 1) {
+        if (Pilihan_Menu == 1) { // Jika user memilih menu 1 (Mencari Gaji) 
             cout << endl;
             cout << "|==========================|" << endl;
             cout << "|==Menu Jabatan Pekerjaan==|" << endl;
             cout << "|==========================|" << endl;
-            for (int i = 0; i < jumlah_jabatan; i++) {
+            for (int i = 0; i < jumlah_jabatan; i++) { // Looping untuk menampilkan jabatan yang tersedia 
                 cout << "      " << i + 1 << ". " << Jabatan[i] << endl;
             }
             cout << "|==========================|" << endl;
@@ -169,25 +169,25 @@ int main() {
                 }
             } while (Pilihan_Jabatan < 1 || Pilihan_Jabatan > 4);
 
-            int indeks[100]; // Array untuk menyimpan indeks karyawan
+            int indeks[100]; // Array untuk menyimpan indeks karyawan yang sesuai dengan jabatan yang dipilih
             int indeks_count = 0; // Jumlah indeks yang valid
-            Tampilkan_Daftar_Nama(Jabatan[Pilihan_Jabatan - 1], karyawan, jumlah_karyawan, indeks, indeks_count);
+            Tampilkan_Daftar_Nama(Jabatan[Pilihan_Jabatan - 1], karyawan, jumlah_karyawan, indeks, indeks_count); // Menampilkan daftar nama karyawan berdasarkan jabatan yang dipilih
 
             int Nomor_Nama;
-            do {
+            do { // Looping untuk memilih nama karyawan yang sesuai
                 cout << " Pilih nama anda yang sesuai (1-" << indeks_count << "): ";
                 cin >> Nomor_Nama;
 
-                if (Nomor_Nama < 1 || Nomor_Nama > indeks_count) {
+                if (Nomor_Nama < 1 || Nomor_Nama > indeks_count) { 
                     cout << " Input anda tidak tersedia. Tolong input antara 1-" << indeks_count << "." << endl;
                 }
             } while (Nomor_Nama < 1 || Nomor_Nama > indeks_count);
 
-            Karyawan& karyawan_terpilih = karyawan[indeks[Nomor_Nama - 1]];
+            Karyawan & karyawan_terpilih = karyawan[indeks[Nomor_Nama - 1]]; // Mengambil data karyawan berdasarkan indeks yang dipilih
             cout << " Nama anda adalah " << karyawan_terpilih.nama << endl;
 
-            int Pilihan_Hitung_Gaji;
-            do {
+            int Pilihan_Hitung_Gaji; 
+            do { // Looping untuk memilih menu perhitungan gaji 
                 cout << endl;
                 cout << "|==========================|" << endl;
                 cout << "|==Menu Perhitungan Gaji===|" << endl;
@@ -204,15 +204,15 @@ int main() {
                 }
             } while (Pilihan_Hitung_Gaji < 1 || Pilihan_Hitung_Gaji > 3);
 
-            int Hari_Masuk, Performa, Jam_Overtime, Gaji_Karyawan;
-            switch (Pilihan_Hitung_Gaji) {
-                case 1:
+            int Hari_Masuk, Performa, Jam_Overtime, Gaji_Karyawan; // Variabel untuk menyimpan input hari masuk, performa, jam overtime, dan gaji karyawan
+            switch (Pilihan_Hitung_Gaji) { // Switch case untuk memilih perhitungan gaji yang dipilih
+                case 1: // Jika user memilih menu 1 (Hitung gaji hari masuk) 
                     cout << " Masukkan jumlah hari masuk kerja anda: ";
                     cin >> Hari_Masuk;
                     Gaji_Karyawan = Hitung_Gaji(karyawan_terpilih.jabatan, Hari_Masuk);
                     cout << " Gaji anda adalah Rp " << Gaji_Karyawan << endl;
                     break;
-                case 2:
+                case 2: // Jika user memilih menu 2 (Hitung gaji performa)
                     cout << " Masukkan jumlah hari masuk kerja anda: ";
                     cin >> Hari_Masuk;
                     cout << " Masukkan performa kerja anda (1-100): ";
@@ -220,7 +220,7 @@ int main() {
                     Gaji_Karyawan = Hitung_Gaji_Perfomance(karyawan_terpilih.jabatan, Hari_Masuk, Performa);
                     cout << " Gaji anda adalah Rp " << Gaji_Karyawan << endl;
                     break;
-                case 3:
+                case 3: // Jika user memilih menu 3 (Hitung gaji overtime)
                     cout << " Masukkan jumlah hari masuk kerja anda: ";
                     cin >> Hari_Masuk;
                     cout << " Masukkan jumlah jam overtime anda: ";
@@ -230,13 +230,13 @@ int main() {
                     break;
             }
 
-            karyawan_terpilih.gaji = Gaji_Karyawan;
-        } else if (Pilihan_Menu == 2) {
+            karyawan_terpilih.gaji = Gaji_Karyawan; // Menyimpan gaji karyawan yang sudah dihitung
+        } else if (Pilihan_Menu == 2) { // Jika user memilih menu 2 (Cari Nama)
             string Nama_Karyawan;
             cout << " Masukkan nama karyawan yang dicari: ";
             cin >> Nama_Karyawan;
             Cari_Karyawan_Berdasarkan_Nama(Nama_Karyawan, karyawan, jumlah_karyawan);
-        } else if (Pilihan_Menu == 3) {
+        } else if (Pilihan_Menu == 3) { // Jika user memilih menu 3 (Hapus Nama)
             string Nama_Karyawan;
             cout << " Masukkan nama karyawan yang ingin dihapus: ";
             cin >> Nama_Karyawan;
@@ -245,7 +245,7 @@ int main() {
 
         cout << " Apakah anda ingin kembali ke menu utama? (y/n): ";
         cin >> Lanjutkan;
-    } while (Lanjutkan == 'y' || Lanjutkan == 'Y');
+    } while (Lanjutkan == 'y' || Lanjutkan == 'Y'); // Jika user ingin kembali ke menu utama, maka loop akan terus berjalan
 
     return 0;
 }
